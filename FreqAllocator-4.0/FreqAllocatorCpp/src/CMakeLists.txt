@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.1)
+project(FreqAllocatorCore)
+file(GLOB_RECURSE FreqAllocatorCoreSrc_H ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
+file(GLOB_RECURSE FreqAllocatorCoreSrc ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+add_library(${PROJECT_NAME} STATIC ${FreqAllocatorCoreSrc_H} ${FreqAllocatorCoreSrc} "random_engine.h")
