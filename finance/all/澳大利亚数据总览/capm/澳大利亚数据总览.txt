@@ -1,0 +1,215 @@
+ xtdes
+
+      id:  1, 2, ..., 127                                    n =        127
+    date:  8/2/2021, 8/3/2021, ..., 8/1/2022                 T =        253
+           Delta(date) = 1 day
+           Span(date)  = 365 periods
+           (id*date uniquely identifies each observation)
+
+Distribution of T_i:   min      5%     25%       50%       75%     95%     max
+                       253     253     253       253       253     253     253
+
+     Freq.  Percent    Cum. |  Pattern*
+ ---------------------------+---------------------------------------------------
+> -------------------------------------------------------------------------
+      127    100.00  100.00 |  3223131322313132231313223131322313132231313223131
+> 121313132221313223131322313132231313113.313223131322313122231313223131321
+ ---------------------------+---------------------------------------------------
+> -------------------------------------------------------------------------
+      127    100.00         |  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+> XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ -------------------------------------------------------------------------------
+> -------------------------------------------------------------------------
+ *Each column represents 3 periods.
+
+
+. xtsum
+
+Variable         |      Mean   Std. Dev.       Min        Max |    Observations
+-----------------+--------------------------------------------+----------------
+enterp~e overall |         .          .          .          . |     N =       0
+         between |                    .          .          . |     n =       0
+         within  |                    .          .          . |     T =       .
+                 |                                            |
+num_id   overall |         .          .          .          . |     N =       0
+         between |                    .          .          . |     n =       0
+         within  |                    .          .          . |     T =       .
+                 |                                            |
+date     overall |  22674.13   106.3921      22494      22858 |     N =   32131
+         between |                    0   22674.13   22674.13 |     n =     127
+         within  |             106.3921      22494      22858 |     T =     253
+                 |                                            |
+ret      overall |   -.00474   .4570387  -80.77083   .9846154 |     N =   32131
+         between |             .0288659  -.3236521   .0056469 |     n =     127
+         within  |             .4561334  -80.45192    .978084 |     T =     253
+                 |                                            |
+price    overall |  1.202509   4.702302       .001      40.55 |     N =   32131
+         between |             4.579123       .001   30.71186 |     n =     127
+         within  |             1.143561  -6.262985   38.13438 |     T =     253
+                 |                                            |
+open     overall |  7233.264   276.2133     6433.4     7628.9 |     N =   32131
+         between |                    0   7233.264   7233.264 |     n =     127
+         within  |             276.2133     6433.4     7628.9 |     T =     253
+                 |                                            |
+close    overall |  7235.225   275.9265     6433.4     7628.9 |     N =   32131
+         between |                    0   7235.225   7235.225 |     n =     127
+         within  |             275.9265     6433.4     7628.9 |     T =     253
+                 |                                            |
+high     overall |  7273.349   269.8542     6493.4     7632.8 |     N =   32131
+         between |                    0   7273.349   7273.349 |     n =     127
+         within  |             269.8542     6493.4     7632.8 |     T =     253
+                 |                                            |
+low      overall |   7194.08   281.6555       6407     7585.9 |     N =   32131
+         between |                    0    7194.08    7194.08 |     n =     127
+         within  |             281.6555       6407     7585.9 |     T =     253
+                 |                                            |
+mktret   overall | -.0001806   .0090205     -.0355      .0219 |     N =   32131
+         between |                    0  -.0001806  -.0001806 |     n =     127
+         within  |             .0090205     -.0355      .0219 |     T =     253
+                 |                                            |
+event_~1 overall |     22700          0      22700      22700 |     N =   32131
+         between |                    0      22700      22700 |     n =     127
+         within  |                    0      22700      22700 |     T =     253
+                 |                                            |
+event_~2 overall |     22770          0      22770      22770 |     N =   32131
+         between |                    0      22770      22770 |     n =     127
+         within  |                    0      22770      22770 |     T =     253
+                 |                                            |
+event_~3 overall |     22776          0      22776      22776 |     N =   32131
+         between |                    0      22776      22776 |     n =     127
+         within  |                    0      22776      22776 |     T =     253
+                 |                                            |
+id       overall |        64   36.66118          1        127 |     N =   32131
+         between |              36.8058          1        127 |     n =     127
+         within  |                    0         64         64 |     T =     253
+
+
+
+. xtunitroot fisher price, dfuller drift lags(2) demean
+
+Fisher-type unit-root test for price
+Based on augmented Dickey-Fuller tests
+--------------------------------------
+Ho: All panels contain unit roots           Number of panels  =    127
+Ha: At least one panel is stationary        Number of periods =    253
+
+AR parameter: Panel-specific                Asymptotics: T -> Infinity
+Panel means:  Included
+Time trend:   Not included                  Cross-sectional means removed
+Drift term:   Included                      ADF regressions: 2 lags
+------------------------------------------------------------------------------
+                                  Statistic      p-value
+------------------------------------------------------------------------------
+ Inverse chi-squared(254)  P       862.2676       0.0000
+ Inverse normal            Z       -19.7406       0.0000
+ Inverse logit t(639)      L*      -20.5158       0.0000
+ Modified inv. chi-squared Pm       26.9875       0.0000
+------------------------------------------------------------------------------
+ P statistic requires number of panels to be finite.
+ Other statistics are suitable for finite or infinite number of panels.
+------------------------------------------------------------------------------
+
+
+. xtunitroot fisher open, dfuller drift lags(2)
+(1,771 missing values generated)
+
+Fisher-type unit-root test for open
+Based on augmented Dickey-Fuller tests
+--------------------------------------
+Ho: All panels contain unit roots           Number of panels  =    127
+Ha: At least one panel is stationary        Number of periods =    253
+
+AR parameter: Panel-specific                Asymptotics: T -> Infinity
+Panel means:  Included
+Time trend:   Not included
+Drift term:   Included                      ADF regressions: 2 lags
+------------------------------------------------------------------------------
+                                  Statistic      p-value
+------------------------------------------------------------------------------
+ Inverse chi-squared(254)  P       374.0915       0.0000
+ Inverse normal            Z        -8.3530       0.0000
+ Inverse logit t(639)      L*       -7.5385       0.0000
+ Modified inv. chi-squared Pm        5.3282       0.0000
+------------------------------------------------------------------------------
+ P statistic requires number of panels to be finite.
+ Other statistics are suitable for finite or infinite number of panels.
+------------------------------------------------------------------------------
+
+. 
+. xtunitroot fisher close, dfuller drift lags(0)
+(1,771 missing values generated)
+
+Fisher-type unit-root test for close
+Based on augmented Dickey-Fuller tests
+--------------------------------------
+Ho: All panels contain unit roots           Number of panels  =    127
+Ha: At least one panel is stationary        Number of periods =    253
+
+AR parameter: Panel-specific                Asymptotics: T -> Infinity
+Panel means:  Included
+Time trend:   Not included
+Drift term:   Included                      ADF regressions: 0 lags
+------------------------------------------------------------------------------
+                                  Statistic      p-value
+------------------------------------------------------------------------------
+ Inverse chi-squared(254)  P       685.9009       0.0000
+ Inverse normal            Z       -16.8719       0.0000
+ Inverse logit t(639)      L*      -16.3588       0.0000
+ Modified inv. chi-squared Pm       19.1625       0.0000
+------------------------------------------------------------------------------
+ P statistic requires number of panels to be finite.
+ Other statistics are suitable for finite or infinite number of panels.
+------------------------------------------------------------------------------
+
+
+
+. 
+. reg CAR if date_new==0, robust
+
+Linear regression                               Number of obs     =        128
+                                                F(0, 127)         =       0.00
+                                                Prob > F          =          .
+                                                R-squared         =     0.0000
+                                                Root MSE          =     .63048
+
+------------------------------------------------------------------------------
+             |               Robust
+         CAR |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       _cons |   .0870481    .055727     1.56   0.121    -.0232257    .1973218
+------------------------------------------------------------------------------
+
+. 
+
+
+
+Linear regression                               Number of obs     =        128
+                                                F(0, 127)         =       0.00
+                                                Prob > F          =          .
+                                                R-squared         =     0.0000
+                                                Root MSE          =     .51602
+
+------------------------------------------------------------------------------
+             |               Robust
+         CAR |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       _cons |   .1260089   .0456103     2.76   0.007     .0357544    .2162634
+------------------------------------------------------------------------------
+
+
+. reg CAR if date_new==0, robust
+
+Linear regression                               Number of obs     =        128
+                                                F(0, 127)         =       0.00
+                                                Prob > F          =          .
+                                                R-squared         =     0.0000
+                                                Root MSE          =     .51602
+
+------------------------------------------------------------------------------
+             |               Robust
+         CAR |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       _cons |   .1260089   .0456103     2.76   0.007     .0357544    .2162634
+------------------------------------------------------------------------------
+
+

@@ -1,0 +1,133 @@
+#INFO: **** input file is /home/lqs/Work/pyscf-master/examples/H2.py ****
+#!/usr/bin/env python
+
+'''
+PySCF doesn't have its own input parser.  The input file is a Python program.
+
+Before going throught the rest part, be sure the PySCF path is added in PYTHONPATH.
+'''
+
+import pyscf
+
+# mol is an object to hold molecule information.
+mol = pyscf.M(
+    verbose = 4,
+    output = 'out_h2',
+    atom = '''
+    h 0.7300000 0.00000 0.000000
+    h 0.000000 0.000000 0.000000''',
+    basis = 'sto-3g',
+)
+# For more details, see pyscf/gto/mole.py and pyscf/examples/gto
+
+#
+# The package follow the convention that each method has its class to hold
+# control parameters.  The calculation can be executed by the kernel function.
+# Eg, to do Hartree-Fock, (1) create HF object, (2) call kernel function
+#
+mf = mol.RHF()
+print('E(HF)=%.15g' % mf.kernel())
+
+
+#
+# A post-HF method can be applied.
+#
+
+mp2 = mf.MP2().run()
+print('E(MP2)=%.15g' % mp2.e_tot)
+
+cc = mf.CCSD().run()
+print('E(CCSD)=%.15g' % cc.e_tot)
+
+#fci = mf.FCI().run()
+#print('E(FCI)=%.15g' % fci.e_tot)
+# More examples of pyscf input can be found in
+# gto/00-input_mole.py
+# gto/01-input_geometry.py
+# gto/04-input_basis.py
+# gto/05-input_ecp.py
+# gto/06-load_mol_from_chkfile.py
+# 1-advanced/002-input_script.py
+#INFO: ******************** input file end ********************
+
+
+System: uname_result(system='Linux', node='iai-quantum', release='3.10.0-1160.76.1.el7.x86_64', version='#1 SMP Wed Aug 10 16:21:17 UTC 2022', machine='x86_64', processor='x86_64')  Threads 128
+Python 3.8.12 (default, Oct 12 2021, 13:49:34) 
+[GCC 7.5.0]
+numpy 1.24.4  scipy 1.10.1
+Date: Thu May 16 22:16:12 2024
+PySCF version 2.1.1
+PySCF path  /home/lqs/Program/psi4conda/lib/python3.8/site-packages/pyscf
+
+[CONFIG] conf_file None
+[INPUT] verbose = 4
+[INPUT] num. atoms = 2
+[INPUT] num. electrons = 2
+[INPUT] charge = 0
+[INPUT] spin (= nelec alpha-beta = 2S) = 0
+[INPUT] symmetry False subgroup None
+[INPUT] Mole.unit = angstrom
+[INPUT] Symbol           X                Y                Z      unit          X                Y                Z       unit  Magmom
+[INPUT]  1 H      0.730000000000   0.000000000000   0.000000000000 AA    1.379500070932   0.000000000000   0.000000000000 Bohr   0.0
+[INPUT]  2 H      0.000000000000   0.000000000000   0.000000000000 AA    0.000000000000   0.000000000000   0.000000000000 Bohr   0.0
+
+nuclear repulsion = 0.724900288931507
+number of shells = 2
+number of NR pGTOs = 6
+number of NR cGTOs = 2
+basis = sto-3g
+ecp = {}
+CPU time:         0.42
+
+
+******** <class 'pyscf.scf.hf.RHF'> ********
+method = RHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+SCF conv_tol = 1e-09
+SCF conv_tol_grad = None
+SCF max_cycles = 50
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /home/lqs/Work/pyscf-master/examples/tmpe5ka_6sp
+max_memory 4000 MB (current use 66 MB)
+Set gradient conv threshold to 3.16228e-05
+init E= -0.772800174649415
+  HOMO = -0.525618189728151  LUMO = 0.605202168978549
+cycle= 1 E= -1.1171941060626  delta_E= -0.344  |g|= 2.11e-16  |ddm|= 0.847
+  HOMO = -0.582714959706445  LUMO = 0.681580570499998
+cycle= 2 E= -1.1171941060626  delta_E=    0  |g|= 2.11e-16  |ddm|=    0
+  HOMO = -0.582714959706445  LUMO = 0.681580570499998
+Extra cycle  E= -1.1171941060626  delta_E=    0  |g|= 2.11e-16  |ddm|=    0
+converged SCF energy = -1.1171941060626
+
+******** <class 'pyscf.mp.mp2.MP2'> ********
+nocc = 1, nmo = 2
+max_memory 4000 MB (current use 73 MB)
+E(MP2) = -1.13010067378297  E_corr = -0.0129065677203636
+
+******** <class 'pyscf.cc.ccsd.CCSD'> ********
+CC2 = 0
+CCSD nocc = 1, nmo = 2
+max_cycle = 50
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 4000 MB (current use 75 MB)
+Init t2, MP2 energy = -1.13010067378297  E_corr(MP2) -0.0129065677203636
+Init E_corr(CCSD) = -0.0129065677203636
+cycle = 1  E_corr(CCSD) = -0.0175587956233094  dE = -0.0046522279  norm(t1,t2) = 0.0257523
+cycle = 2  E_corr(CCSD) = -0.019203405653071  dE = -0.00164461003  norm(t1,t2) = 0.00910371
+cycle = 3  E_corr(CCSD) = -0.0200929413539153  dE = -0.000889535701  norm(t1,t2) = 0.00319558
+cycle = 4  E_corr(CCSD) = -0.0200919425916521  dE = 9.98762263e-07  norm(t1,t2) = 4.93482e-06
+cycle = 5  E_corr(CCSD) = -0.0200917857637586  dE = 1.56827893e-07  norm(t1,t2) = 1.33937e-06
+cycle = 6  E_corr(CCSD) = -0.0200917219224143  dE = 6.38413443e-08  norm(t1,t2) = 7.74805e-07
+CCSD converged
+E(CCSD) = -1.137285827985019  E_corr = -0.02009172192241433

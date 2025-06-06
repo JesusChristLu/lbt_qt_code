@@ -1,0 +1,25 @@
+file size 0
+qasm depth 15
+qasm gate number:
+{'cx': 61}61
+20 bit
+after cross square chip
+check cross square number 20
+chech box add 52 swap, 41 depth
+after triangle chip
+triangle qubit number 20
+triangle add 52 swap, 33 depth
+after li chip
+li qubit number 20
+li add 42 swap, 35 depth
+after chip
+qubit number 22
+add 36 swap, 27 depth
+better than cross square swap 30.8%
+better than cross square depth 34.1%
+better than triangle swap 30.8%
+better than triangle depth 18.2%
+better than li swap 14.3%
+better than li depth 22.9%
+the best swap CBDD
+the best depth CBDD

@@ -1,0 +1,145 @@
+#INFO: **** input file is /home/lqs/Work/pyscf-master/examples/LiH.py ****
+#!/usr/bin/env python
+
+'''
+PySCF doesn't have its own input parser.  The input file is a Python program.
+
+Before going throught the rest part, be sure the PySCF path is added in PYTHONPATH.
+'''
+
+import pyscf
+
+# mol is an object to hold molecule information.
+mol = pyscf.M(
+    verbose = 4,
+    output = 'out_LiH',
+    atom = '''
+    Li 1.5300000 0.00000 0.000000
+    h 0.000000 0.000000 0.000000''',
+    basis = 'sto-3g',
+)
+# For more details, see pyscf/gto/mole.py and pyscf/examples/gto
+
+#
+# The package follow the convention that each method has its class to hold
+# control parameters.  The calculation can be executed by the kernel function.
+# Eg, to do Hartree-Fock, (1) create HF object, (2) call kernel function
+#
+mf = mol.RHF()
+print('E(HF)=%.15g' % mf.kernel())
+
+
+#
+# A post-HF method can be applied.
+#
+
+mp2 = mf.MP2().run()
+print('E(MP2)=%.15g' % mp2.e_tot)
+
+cc = mf.CCSD().run()
+print('E(CCSD)=%.15g' % cc.e_tot)
+
+#fci = mf.FCI().run()
+#print('E(FCI)=%.15g' % fci.e_tot)
+# More examples of pyscf input can be found in
+# gto/00-input_mole.py
+# gto/01-input_geometry.py
+# gto/04-input_basis.py
+# gto/05-input_ecp.py
+# gto/06-load_mol_from_chkfile.py
+# 1-advanced/002-input_script.py
+#INFO: ******************** input file end ********************
+
+
+System: uname_result(system='Linux', node='iai-quantum', release='3.10.0-1160.76.1.el7.x86_64', version='#1 SMP Wed Aug 10 16:21:17 UTC 2022', machine='x86_64', processor='x86_64')  Threads 128
+Python 3.8.12 (default, Oct 12 2021, 13:49:34) 
+[GCC 7.5.0]
+numpy 1.24.4  scipy 1.10.1
+Date: Fri Jan  5 21:30:37 2024
+PySCF version 2.1.1
+PySCF path  /home/lqs/Program/psi4conda/lib/python3.8/site-packages/pyscf
+
+[CONFIG] conf_file None
+[INPUT] verbose = 4
+[INPUT] num. atoms = 2
+[INPUT] num. electrons = 4
+[INPUT] charge = 0
+[INPUT] spin (= nelec alpha-beta = 2S) = 0
+[INPUT] symmetry False subgroup None
+[INPUT] Mole.unit = angstrom
+[INPUT] Symbol           X                Y                Z      unit          X                Y                Z       unit  Magmom
+[INPUT]  1 Li     1.530000000000   0.000000000000   0.000000000000 AA    2.891280970585   0.000000000000   0.000000000000 Bohr   0.0
+[INPUT]  2 H      0.000000000000   0.000000000000   0.000000000000 AA    0.000000000000   0.000000000000   0.000000000000 Bohr   0.0
+
+nuclear repulsion = 1.03760237435294
+number of shells = 4
+number of NR pGTOs = 18
+number of NR cGTOs = 6
+basis = sto-3g
+ecp = {}
+CPU time:         0.93
+
+
+******** <class 'pyscf.scf.hf.RHF'> ********
+method = RHF
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+SCF conv_tol = 1e-09
+SCF conv_tol_grad = None
+SCF max_cycles = 50
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /home/lqs/Work/pyscf-master/examples/tmpojrrip49
+max_memory 4000 MB (current use 66 MB)
+Set gradient conv threshold to 3.16228e-05
+init E= -7.60373294156717
+  HOMO = -0.281883081964647  LUMO = 0.029167338274428
+cycle= 1 E= -7.85500564786894  delta_E= -0.251  |g|= 0.103  |ddm|=  1.1
+  HOMO = -0.279468154605317  LUMO = 0.0761475130746161
+cycle= 2 E= -7.86241404356302  delta_E= -0.00741  |g|= 0.0215  |ddm|= 0.236
+  HOMO = -0.294858976841355  LUMO = 0.0791600660445762
+cycle= 3 E= -7.86314408516483  delta_E= -0.00073  |g|= 0.00784  |ddm|= 0.0682
+  HOMO = -0.291022400178284  LUMO = 0.078873040849653
+cycle= 4 E= -7.86330698823197  delta_E= -0.000163  |g|= 0.000311  |ddm|= 0.0497
+  HOMO = -0.291133248424129  LUMO = 0.0787744157632973
+cycle= 5 E= -7.86330711743013  delta_E= -1.29e-07  |g|= 3.76e-05  |ddm|= 0.00151
+  HOMO = -0.291128975389332  LUMO = 0.0787849695669164
+cycle= 6 E= -7.86330711928533  delta_E= -1.86e-09  |g|= 1.53e-06  |ddm|= 0.000152
+  HOMO = -0.291128676792346  LUMO = 0.078785540640508
+cycle= 7 E= -7.86330711929075  delta_E= -5.42e-12  |g|= 3.3e-08  |ddm|= 9.3e-06
+  HOMO = -0.291128691174982  LUMO = 0.0787855322185889
+Extra cycle  E= -7.86330711929074  delta_E= 8.88e-15  |g|= 9.32e-09  |ddm|= 9.28e-08
+converged SCF energy = -7.86330711929074
+
+******** <class 'pyscf.mp.mp2.MP2'> ********
+nocc = 2, nmo = 6
+max_memory 4000 MB (current use 73 MB)
+E(MP2) = -7.8756989248097  E_corr = -0.0123918055189566
+
+******** <class 'pyscf.cc.ccsd.CCSD'> ********
+CC2 = 0
+CCSD nocc = 2, nmo = 6
+max_cycle = 50
+direct = 0
+conv_tol = 1e-07
+conv_tol_normt = 1e-05
+diis_space = 6
+diis_start_cycle = 0
+diis_start_energy_diff = 1e+09
+max_memory 4000 MB (current use 117 MB)
+Init t2, MP2 energy = -7.87569892483599  E_corr(MP2) -0.0123918055452515
+Init E_corr(CCSD) = -0.0123918055452516
+cycle = 1  E_corr(CCSD) = -0.0165840990552785  dE = -0.00419229351  norm(t1,t2) = 0.0305005
+cycle = 2  E_corr(CCSD) = -0.0181522163056873  dE = -0.00156811725  norm(t1,t2) = 0.0138339
+cycle = 3  E_corr(CCSD) = -0.0193071734119489  dE = -0.00115495711  norm(t1,t2) = 0.00792349
+cycle = 4  E_corr(CCSD) = -0.0193840662363809  dE = -7.68928244e-05  norm(t1,t2) = 0.00349608
+cycle = 5  E_corr(CCSD) = -0.019395961868742  dE = -1.18956324e-05  norm(t1,t2) = 0.000439178
+cycle = 6  E_corr(CCSD) = -0.0193936254636963  dE = 2.33640505e-06  norm(t1,t2) = 3.98308e-05
+cycle = 7  E_corr(CCSD) = -0.0193927154266148  dE = 9.10037081e-07  norm(t1,t2) = 8.32422e-06
+cycle = 8  E_corr(CCSD) = -0.0193927757721119  dE = -6.03454971e-08  norm(t1,t2) = 6.76988e-07
+CCSD converged
+E(CCSD) = -7.882699895062854  E_corr = -0.01939277577211194

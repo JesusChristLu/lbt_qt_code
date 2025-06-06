@@ -1,0 +1,1 @@
+{"taskid": "0451F0BD0B269ADF9B62BA5915FC105F", "status": "success", "result": [{"key": ["0x1", "0x0", "0x2", "0x3"], "value": [0.226, 0.27, 0.26, 0.244]}]}

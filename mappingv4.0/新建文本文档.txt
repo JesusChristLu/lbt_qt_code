@@ -1,0 +1,26 @@
+             bit1      bit2      bit3      bit4      bit5      bit6
+    1         H         X         H         |         |         |
+    2         |         H         |         |         |         |
+    3         |         H         |         |         |         |
+    4         |        cnot1     cnot1      |         |         |
+    5         |         Td        |         |         |         |
+    6        cnot1     cnot1      |         |         |         |
+    7         |         T         |         |         |         |
+    8         |        cnot1     cnot1      |         |         |
+    9         |        cnot1     cnot1      |         |         |
+    10        |        cnot1     cnot1      |         |         |
+    11        |        cnot1     cnot1      |         |         |
+    12        |         Td        Td        |         |         |
+    13       cnot1     cnot1      |         |         |         |
+    14       cnot1     cnot1      |         |         |         |
+    15       cnot1     cnot1      |         |         |         |
+    16        |        cnot1     cnot1      |         |         |
+    17       cnot1     cnot1      T         |         |         |
+    18        Td        |         H         |         |         |
+    19       cnot1     cnot1      S         |         |         |
+    20        T         |         H         |         |         |
+    21        H         |         X         |         |         |
+    22        X         |         H         |         |         |
+    23       cnot1     cnot1      H         |         |         |
+    24        X         |         X         |         |         |
+    25        H         |         H         |         |         |

@@ -1,0 +1,32 @@
+def Rabi(omega, detune, t):
+    return 0.5 * omega ** 2 / (omega ** 2 + detune ** 2) * np.sin(0.5 * np.sqrt(omega ** 2 + detune ** 2) * t) ** 2
+
+t = np.linspace(0, 200, 100)
+ws_list = np.linspace(4.2, 4.3, 300)
+theory = np.zeros(len(ws_list))
+# fig, ax = plt.subplots()
+# ws = 4.242
+# ax.plot(t, Rabi(0.003, 4.22 - ws, t) + Rabi(0.003, 4.264 - ws, t))
+
+for i, ws in enumerate(ws_list):
+    # theory[i] = np.max(Rabi(0.00215, 4.22 - ws, np.linspace(0, 1000, len(evolution_result_list[0].times))) + Rabi(0.0021, 4.264 - ws, np.linspace(0, 1000, len(evolution_result_list[0].times))))
+    theory[i] = np.max(Rabi(0.003, 4.22 - ws, t) + Rabi(0.003, 4.264 - ws, t))
+
+fig, ax = plt.subplots()
+ax.set_xlabel(r'$\omega_s$ (GHz)')
+ax.set_ylabel(r'population')
+# ax.set_yscale('log')
+
+
+# expect_arr = np.array(evo_result_list).reshape(len(ws_list), len(wc_list)).T
+
+# custom_color = cz.ploter.cmap(np.linspace(0, 1, len(expect_arr)))
+# for i, wc in enumerate(wc_list):
+    # label = r'$\omega_c=$' + str(round(wc, 3))
+    # ax.plot(ws_list, expect_arr[i], label=label, color=custom_color[i])
+ax.plot(ws_list, theory, label='Rabi')
+# ax.set_yscale('log')
+ax.legend()
+title = 'max leakage'
+ax.set_title(title)
+# cz.ploter.save_fig(fig, title)

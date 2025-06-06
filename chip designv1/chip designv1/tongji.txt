@@ -1,0 +1,101 @@
+finish1 8
+finish2 6
+finish3 11
+finish4 13
+1
+finish1 3
+finish2 2
+finish3 5
+finish4 10
+2
+finish1 2
+finish2 2
+finish3 3
+finish4 5
+3
+finish1 4
+finish2 3
+finish3 5
+finish4 8
+4
+finish1 15
+finish2 16
+finish3 20
+finish4 21
+5
+finish1 4
+finish2 2
+finish3 6
+finish4 7
+6
+finish1 5
+finish2 3
+finish3 5
+finish4 8
+7
+finish1 17
+finish2 10
+finish3 19
+finish4 19
+8
+finish1 4
+finish2 2
+finish3 5
+finish4 7
+9
+finish1 14
+finish2 9
+finish3 20
+finish4 13
+10
+finish1 7
+finish2 2
+finish3 9
+finish4 7
+11
+finish1 6
+finish2 8
+finish3 6
+finish4 7
+12
+finish1 5
+finish2 5
+finish3 6
+finish4 8
+13
+finish1 28
+finish2 22
+finish3 34
+finish4 39
+14
+finish1 11
+finish2 12
+finish3 15
+finish4 12
+15
+finish1 10
+finish2 14
+finish3 11
+finish4 16
+16
+finish1 6
+finish2 14
+finish3 6
+finish4 20
+17
+finish1 2
+finish2 1
+finish3 3
+finish4 1
+18
+finish1 6
+finish2 7
+finish3 9
+finish4 13
+19
+finish1 14
+finish2 14
+finish3 16
+finish4 22
+20
+

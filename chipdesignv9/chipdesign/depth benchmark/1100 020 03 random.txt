@@ -1,0 +1,25 @@
+file size 0
+qasm depth 1100
+qasm gate number:
+{'cx': 4031}4031
+20 bit
+after cross square chip
+cross square qubit number 20
+cross square add 3100 swap, 2028 depth
+after triangle chip
+2d lattice qubit number 20
+2d lattice add 4384 swap, 2324 depth
+after li chip
+li qubit number 20
+li add 3445 swap, 2125 depth
+after SPQPD
+SPQPD qubit number 21
+SPQPD add 3864 swap, 1953 depth
+better than cross square swap -24.6%
+better than cross square depth 3.7%
+better than 2d lattice swap 11.9%
+better than 2d lattice depth 16.0%
+better than li swap -12.2%
+better than li depth 8.1%
+the best swap cross square
+the best depth SPQPD

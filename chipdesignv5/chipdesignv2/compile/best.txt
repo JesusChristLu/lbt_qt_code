@@ -1,0 +1,13 @@
+best swap dict
+check box :
+triangle :
+li :
+chip :
+ising_model_16.qasm
+
+best depth dict
+check box :
+triangle :
+li :
+chip :
+ising_model_16.qasm

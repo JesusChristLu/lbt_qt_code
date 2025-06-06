@@ -1,0 +1,1 @@
+{"taskid": "A6E504860807DC85E638749BD42E77F7", "status": "failed", "result": {"errcode": "12", "errinfo": "Error: QProg pre-estimate error: Error: unknow error on estimate task:5CDB5996D58D45EC9770D2C24FD4E15A, exception:too little qubits is allocated"}}

@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.1)
+
+
+add_executable(FreqAllocatorSingleTest main_single.cpp)
+target_link_libraries(FreqAllocatorSingleTest FreqAllocatorCore fmt)
+
+add_executable(FreqAllocatorTwoqTest main_twoq.cpp)
+target_link_libraries(FreqAllocatorTwoqTest FreqAllocatorCore fmt)

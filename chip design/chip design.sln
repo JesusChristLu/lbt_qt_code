@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "chip design", "chip design\chip design.pyproj", "{5C51B7F7-CC5C-4656-89B1-EB80F6125C2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C51B7F7-CC5C-4656-89B1-EB80F6125C2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C51B7F7-CC5C-4656-89B1-EB80F6125C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB52491B-D615-4DD1-A54E-55A19B5CD7FD}
+	EndGlobalSection
+EndGlobal

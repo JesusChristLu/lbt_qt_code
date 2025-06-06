@@ -1,0 +1,1 @@
+{"taskid": "1306D65FF77016AA73B94BC901AA80A3", "status": "failed", "result": {"errcode": "12", "errinfo": "Error: QProg pre-estimate error: Error: unknow error on estimate task:DDFBCF4E2DFE47E2BA0D3C831EC3AC8E, exception:std::bad_cast"}}
