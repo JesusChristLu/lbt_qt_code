@@ -1,0 +1,47 @@
+[[source]]
+url = "https://mirrors.aliyun.com/pypi/simple"
+verify_ssl = false
+name = "pip_conf_index_global"
+
+[[source]]
+url = "https://mirrors.aliyun.com/pypi/simple/"
+verify_ssl = true
+name = "mirrorsaliyun"
+
+[packages]
+networkx = "==2.8.8"
+matplotlib = "==3.6.2"
+pyside6 = "==6.4.0"
+numpy = "==1.19.5"
+scipy = "==1.7.3"
+pyyaml = "==6.0"
+minio = "==7.1.12"
+mongoengine = "==0.23.1"
+pandas = "==1.4.4"
+sympy = "==1.11.1"
+pyzmq = "==24.0.1"
+loguru = "==0.6.0"
+scikit-learn = "==1.0.2"
+qutip = "==4.7.0"
+jsonschema = "==4.17.0"
+tqdm = "==4.64.1"
+cython = "==0.29.32"
+pdfkit = "==1.0.0"
+markdown = "==3.4.1"
+jinja2 = "==3.1.2"
+qdarkstyle = "==3.1"
+pymongo = "==3.13.0"
+cma = "==3.3.0"
+pyvisa = "==1.11.3"
+pyvisa-py = "==0.5.2"
+brokenaxes = "==0.5.0"
+cx-freeze = "==6.13.0"
+prettytable = "==3.8.0"
+openpyxl = "==3.1.2"
+
+[dev-packages]
+black = "*"
+pylint = "*"
+
+[requires]
+python_version = "3.9"

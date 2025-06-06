@@ -1,0 +1,231 @@
+{
+    "currency_params": {
+        "run_type": "dag",
+        "conf_data": {
+            "system": {
+                "sample":"test_chip",
+                "env_name": "D00_1019",
+                "point_label": "person_point",
+                "invoker_addr": "tcp://127.0.0.1:8088",
+                "baseband_freq": 566.667,
+                "qaio_type": 8,
+                "save_type": "local",
+                "local_root": "D:\\test",
+                "log_path": "",
+                "config_path": ""
+            },
+            "mongo": {
+                "inst_host": "127.0.0.1",
+                "inst_port": 27017
+            },
+            "minio": {
+                "s3_root": "10.10.24.76:9000",
+                "s3_access_key": "super",
+                "s3_secret_key": "80138013"
+            },
+            "qdc": {
+                "cpci_1": "192.168.2.100",
+                "cpci_2": "192.168.2.101",
+                "cpci_3": "192.168.2.102",
+                "cpci_4": "192.168.2.103",
+                "cpci_5": "192.168.2.104"
+            }
+        }
+    },
+    "base_params": {
+        "instrument_type": 8,
+        "qubit_names": ["q0"],
+        "coupler_names": [],
+        "compensate_policy": "minimum",
+        "environment_elements": ["q0","q1", "q2", "q3", "c0", "c1", "c2"],
+        "discriminator": {
+            "names": [],
+            "union_flag": false,
+            "union_names": []
+        }
+    },
+    "experiment": {},
+    "dag": {
+        "dag_name": "SingleQubitCalibrate",
+        "official": true,
+        "node_edges": {
+            "ab": {
+                "cd": {
+                    "weight": 1
+                }
+            },
+            "cd": {
+                "df": {
+                    "weight": 2
+                },
+                "ef": {
+                    "weight": 1
+                }
+            },
+            "df": {
+                "ff": {
+                    "weight": 1
+                }
+            },
+            "ef": {
+                "ff": {
+                    "weight": 1
+                }
+            },
+            "ff": {
+                "fg": {
+                    "weight": 1
+                }
+            },
+            "fg": {
+                "gh": {
+                    "weight": 1
+                }
+            },
+            "gh": {}
+        },
+        "node_params": {
+            "ab": {
+                "exp_name": "CavityFreqSpectrum",
+                "exp_params": {
+                    "experiment_options": {
+                        "add_pi_pulse": false,
+                        "readout_power": -30,
+                        "scope": 3,
+                        "points": 61,
+                        "simulator_data_path": "F:\\Simulator\\monster\\data\\CavityFreqSpectrum"
+                    },
+                    "analysis_options": {
+                        "quality_bounds": [0.98, 0.95, 0.85]
+                    },
+                    "sub_analysis_options": {}
+                },
+                "adjust_params": {},
+                "location": [100, 200]
+            },	
+            "cd": {
+                "exp_name": "QubitSpectrum",
+                "exp_params": {
+                    "experiment_options": {
+                        "freq_list": "qarange | (5200, 5400, 2)",
+                        "drive_power": -35,
+                        "z_amp": null,
+                        "use_square": true,
+                        "band_width": 50,
+                        "fine_flag": true,
+                        "simulator_data_path": "F:\\Simulator\\monster\\data\\QubitSpectrum\\5300Mhz\\fine"
+                    },
+                    "analysis_options": {
+                        "snr_bounds": 1.5,
+                        "quality_bounds": [0.8, 0.6, 0.5],
+                        "is_plot": true
+                    },
+                    "sub_analysis_options": {}
+                },
+                "adjust_params": {},
+                "location": [200, 200]
+            },
+            "df": {
+                "exp_name": "RabiScanWidth",
+                "exp_params": {
+                    "experiment_options": {
+                        "drive_freq": 5300,
+                        "drive_power": -35,
+                        "widths": "qarange | (5, 200, 5)",
+                        "simulator_data_path": "F:\\Simulator\\monster\\data\\RabiScanWidth"
+                    },
+                    "analysis_options": {
+                        "quality_bounds": [0.98, 0.95, 0.91]
+                    },
+                    "sub_analysis_options": {}
+                },
+                "adjust_params": {},
+                "location": [300, 100]
+            },
+            "ef": {
+                "exp_name": "XpiDetection",
+                "exp_params": {
+                    "experiment_options": {
+                        "expect_value": 0.7,
+                        "scope": 0.1,
+                        "max_loops": 5,
+                        "amps": "qarange | (0, 1, 0.02)",
+                        "drive_power": -15.0,
+                        "name": "Xpi",
+                        "simulator_data_path": "F:\\Simulator\\monster\\data\\XpiDetection"
+                    },
+                    "analysis_options": {},
+                    "sub_analysis_options": {
+                        "quality_bounds": [0.98, 0.92, 0.85]
+                    }
+                },
+                "adjust_params": {},
+                "location": [300, 300]
+            },
+            "ff": {
+                "exp_name": "ReadoutFreqCalibrate",
+                "exp_params": {
+                    "experiment_options": {
+                        "simulator_data_path": "F:\\Simulator\\monster\\data\\ReadoutFreqCalibrate"
+                    },
+                    "analysis_options": {
+                        "distance_flag": true,
+                        "intersection_flag": false,
+                        "diff_threshold": 0.1
+                    },
+                    "sub_analysis_options": {
+                        "quality_bounds": [0.98, 0.95, 0.85],
+                        "is_plot": true
+                    }
+                },
+                "adjust_params": {},
+                "location": [400, 200]
+            },
+            "fg": {
+                "exp_name": "ReadoutPowerCalibrate",
+                "exp_params": {
+                    "experiment_options": {
+                        "sweep_list": "normal | [-40, -35, -30, -25, -20]",
+                        "simulator_data_path": "F:\\Simulator\\monster\\data\\ReadoutPowerCalibrate"
+                    },
+                    "analysis_options": {
+                        "fidelity_threshold": [0.9, 0.7],
+                        "outlier": 0.011
+                    },
+                    "sub_analysis_options": {
+                        "method": "GMM",
+                        "quality_bounds": [2, 0.85, 0.7, 0.011],
+                        "is_plot": true
+                    }
+                },
+                "adjust_params": {},
+                "location": [400, 200]
+            },
+            "gh": {
+                "exp_name": "SingleShot",
+                "exp_params": {
+                    "experiment_options": {
+                        "repeat": 10000,
+                        "is_check": false,
+                        "save_bin": false,
+                        "simulator_data_path": "F:\\Simulator\\monster\\data\\SingleShot"
+                    },
+                    "analysis_options": {
+                        "method": "GMM",
+                        "quality_bounds": [2, 0.85, 0.7, 0.011],
+                        "is_plot": true
+                    },
+                    "sub_analysis_options": {}
+                },
+                "adjust_params": {},
+                "location": [400, 200]
+            }
+		},
+		"execute_params": {
+            "is_traceback": false,
+            "is_report": false,
+            "start_node": null,
+            "search_type": "weight_search"
+        }
+    }
+}

@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1300</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Context Editor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="_imgs/_imgs.qrc">
+    <normaloff>:/context-edit.png</normaloff>:/context-edit.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,2">
+    <item>
+     <widget class="QWidget" name="widget_2" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>5</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Chip Bit Channel</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>6</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QTableViewChannelWidget" name="table_view_channel"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string>Context Collector</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>6</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QTableViewContextWidget" name="table_view_context"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="title">
+       <string>Component</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QSplitter" name="splitter">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <widget class="QTreeViewContextWidget" name="tree_view_context"/>
+         <widget class="QTextEdit" name="textEdit"/>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1300</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuChip">
+    <property name="title">
+     <string>Chip</string>
+    </property>
+    <addaction name="action_chip_layout"/>
+    <addaction name="action_save_line"/>
+    <addaction name="action_sync_chip_Line"/>
+    <addaction name="separator"/>
+    <addaction name="action_init_base_qubit"/>
+    <addaction name="action_init_config"/>
+    <addaction name="separator"/>
+    <addaction name="action_del_and_init_qubit"/>
+    <addaction name="action_delete_init_config"/>
+    <addaction name="separator"/>
+    <addaction name="actionInit_sos_RT_data"/>
+   </widget>
+   <widget class="QMenu" name="menuContext">
+    <property name="title">
+     <string>Context</string>
+    </property>
+    <addaction name="action_create"/>
+    <addaction name="action_set_env_bit"/>
+    <addaction name="separator"/>
+    <addaction name="action_add_inst"/>
+    <addaction name="action_add_qubit"/>
+    <addaction name="action_add_dcm"/>
+    <addaction name="action_add_crosstalk"/>
+    <addaction name="action_add_compensate"/>
+    <addaction name="separator"/>
+    <addaction name="action_minimum"/>
+    <addaction name="action_maximum"/>
+    <addaction name="separator"/>
+    <addaction name="action_clear"/>
+    <addaction name="action_reset_context"/>
+   </widget>
+   <widget class="QMenu" name="menuStandard">
+    <property name="title">
+     <string>Standard</string>
+    </property>
+    <addaction name="actionStandardContext"/>
+   </widget>
+   <addaction name="menuChip"/>
+   <addaction name="menuContext"/>
+   <addaction name="menuStandard"/>
+  </widget>
+  <action name="actionImport">
+   <property name="icon">
+    <iconset>
+     <normaloff>_imgs/local.png</normaloff>_imgs/local.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import</string>
+   </property>
+  </action>
+  <action name="actionToFile">
+   <property name="icon">
+    <iconset>
+     <normaloff>_imgs/file-code.png</normaloff>_imgs/file-code.png</iconset>
+   </property>
+   <property name="text">
+    <string>ToFile</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset>
+     <normaloff>_imgs/save.png</normaloff>_imgs/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="icon">
+    <iconset>
+     <normaloff>_imgs/save_as.png</normaloff>_imgs/save_as.png</iconset>
+   </property>
+   <property name="text">
+    <string>SaveAs</string>
+   </property>
+  </action>
+  <action name="actionQuery">
+   <property name="icon">
+    <iconset>
+     <normaloff>_imgs/database-search.png</normaloff>_imgs/database-search.png</iconset>
+   </property>
+   <property name="text">
+    <string>Query</string>
+   </property>
+  </action>
+  <action name="actionRefresh">
+   <property name="icon">
+    <iconset>
+     <normaloff>_imgs/refresh.png</normaloff>_imgs/refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Refresh</string>
+   </property>
+  </action>
+  <action name="actionQueryAll">
+   <property name="icon">
+    <iconset>
+     <normaloff>_imgs/database-download.png</normaloff>_imgs/database-download.png</iconset>
+   </property>
+   <property name="text">
+    <string>QueryAll</string>
+   </property>
+   <property name="toolTip">
+    <string>Query All Qubit</string>
+   </property>
+  </action>
+  <action name="action_create_chip_line">
+   <property name="text">
+    <string>Create Chip Line</string>
+   </property>
+  </action>
+  <action name="action_init_base_qubit">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/init_qubit.png</normaloff>:/init_qubit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Init Base Qubit</string>
+   </property>
+  </action>
+  <action name="action_init_config">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/init_config.png</normaloff>:/init_config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Init Config Data</string>
+   </property>
+  </action>
+  <action name="action_clear">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/clear.png</normaloff>:/clear.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear Context</string>
+   </property>
+  </action>
+  <action name="action_maximum">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>maximum</string>
+   </property>
+  </action>
+  <action name="action_minimum">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>minimum</string>
+   </property>
+  </action>
+  <action name="action_add_qubit">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/qubit.png</normaloff>:/qubit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Qubit</string>
+   </property>
+  </action>
+  <action name="action_add_coupler">
+   <property name="text">
+    <string>Add Coupler</string>
+   </property>
+  </action>
+  <action name="action_add_dcm">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/dcm.png</normaloff>:/dcm.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Dcm</string>
+   </property>
+  </action>
+  <action name="action_sq">
+   <property name="text">
+    <string>sinle_base_qubit</string>
+   </property>
+  </action>
+  <action name="action_sqc">
+   <property name="text">
+    <string>single_qubit_calibration</string>
+   </property>
+  </action>
+  <action name="action_add_inst">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/inst.png</normaloff>:/inst.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Inst</string>
+   </property>
+  </action>
+  <action name="action_add_crosstalk">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/crosstalk.png</normaloff>:/crosstalk.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Crosstalk</string>
+   </property>
+  </action>
+  <action name="action_set_env_bit">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/set_env_bit.png</normaloff>:/set_env_bit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Env Bit</string>
+   </property>
+  </action>
+  <action name="action_add_compensate">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/compensate.png</normaloff>:/compensate.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Compensate</string>
+   </property>
+  </action>
+  <action name="action_create">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/create_context.png</normaloff>:/create_context.png</iconset>
+   </property>
+   <property name="text">
+    <string>Create Context</string>
+   </property>
+  </action>
+  <action name="action_reset_context">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/refresh.png</normaloff>:/refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reset Context </string>
+   </property>
+  </action>
+  <action name="action_cpqc">
+   <property name="text">
+    <string>coupler_probe_qubit_calibration</string>
+   </property>
+  </action>
+  <action name="action_qntf">
+   <property name="text">
+    <string>qubit_net_tunable_first</string>
+   </property>
+  </action>
+  <action name="action_qnts">
+   <property name="text">
+    <string>qubit_net_tunable_second</string>
+   </property>
+  </action>
+  <action name="action_crosstalk">
+   <property name="text">
+    <string>ac_crosstalk_env</string>
+   </property>
+  </action>
+  <action name="action_chip_layout">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/init_config.png</normaloff>:/init_config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Chip Layout</string>
+   </property>
+  </action>
+  <action name="action_save_line">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/save.png</normaloff>:/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Chip Line</string>
+   </property>
+  </action>
+  <action name="actionStandardContext">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/build.png</normaloff>:/build.png</iconset>
+   </property>
+   <property name="text">
+    <string>Standard Context</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+B</string>
+   </property>
+  </action>
+  <action name="action_sync_chip_Line">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/reset.png</normaloff>:/reset.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sync Chip Line</string>
+   </property>
+  </action>
+  <action name="action_delete_init_config">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/delete2.png</normaloff>:/delete2.png</iconset>
+   </property>
+   <property name="text">
+    <string>del and init config</string>
+   </property>
+  </action>
+  <action name="action_del_and_init_qubit">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/delete2.png</normaloff>:/delete2.png</iconset>
+   </property>
+   <property name="text">
+    <string>del and init Qubit</string>
+   </property>
+  </action>
+  <action name="actionInit_sos_RT_data">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/config.png</normaloff>:/config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Init sos RT data</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QTreeViewContextWidget</class>
+   <extends>QTreeView</extends>
+   <header>.widgets.context.tree_view_context</header>
+  </customwidget>
+  <customwidget>
+   <class>QTableViewContextWidget</class>
+   <extends>QTableView</extends>
+   <header>.widgets.context.table_view_context</header>
+  </customwidget>
+  <customwidget>
+   <class>QTableViewChannelWidget</class>
+   <extends>QTableView</extends>
+   <header>.widgets.context.table_view_channel</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="_imgs/_imgs.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>action_add_compensate</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>context_add_compensates()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_add_crosstalk</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>context_add_crosstalk()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_add_dcm</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>context_add_dcm()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_add_inst</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>context_add_inst()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_add_qubit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>context_add_qubit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_clear</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>context_clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_create</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>context_create()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_init_config</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chip_init_config_data()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_set_env_bit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>context_set_env_bit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_init_base_qubit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chip_init_base_qubit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_reset_context</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>context_reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>555</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_minimum</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>context_min_env()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>555</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_maximum</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>context_max_env()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>555</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_chip_layout</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chip_layout()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>555</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_save_line</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chip_save_line()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>555</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStandardContext</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>build_std_context()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>555</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_sync_chip_Line</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>sync_chip_line()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>649</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_delete_init_config</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chip_del_init_config_data()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>649</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_del_and_init_qubit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chip_del_init_qubit_data()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>649</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionInit_sos_RT_data</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chip_init_sos_rt_data()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>649</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>context_add_crosstalk()</slot>
+  <slot>context_add_compensates()</slot>
+  <slot>context_set_env_bit()</slot>
+  <slot>chip_init_base_qubit()</slot>
+  <slot>context_add_inst()</slot>
+  <slot>context_add_qubit()</slot>
+  <slot>context_add_coupler()</slot>
+  <slot>context_add_dcm()</slot>
+  <slot>context_clear()</slot>
+  <slot>context_create()</slot>
+  <slot>chip_create_line()</slot>
+  <slot>chip_init_config_data()</slot>
+  <slot>context_reset()</slot>
+  <slot>context_max_env()</slot>
+  <slot>context_min_env()</slot>
+  <slot>chip_layout()</slot>
+  <slot>chip_save_line()</slot>
+  <slot>build_std_context()</slot>
+  <slot>sync_chip_line()</slot>
+  <slot>chip_del_init_config_data()</slot>
+  <slot>chip_del_init_qubit_data()</slot>
+  <slot>chip_init_sos_rt_data()</slot>
+ </slots>
+</ui>

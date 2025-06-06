@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1215</width>
+    <height>736</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Qubit Editor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="_imgs/_imgs.qrc">
+    <normaloff>:/qubit.png</normaloff>:/qubit.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QGroupBox" name="describe_group">
+          <property name="title">
+           <string>Component Describe</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="3,1">
+           <item>
+            <widget class="QWidget" name="child_widget" native="true">
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,1,5">
+                <item>
+                 <widget class="QLabel" name="label_2">
+                  <property name="text">
+                   <string>id</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="qid_label"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="name_layout" stretch="1,1,5">
+                <item>
+                 <widget class="QLabel" name="name_label">
+                  <property name="text">
+                   <string>name</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="name_space">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="name_edit"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="user_layout" stretch="1,1,5">
+                <item>
+                 <widget class="QLabel" name="user_label">
+                  <property name="text">
+                   <string>user</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="user_space">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="user_edit"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="point_layout" stretch="1,1,5">
+                <item>
+                 <widget class="QLabel" name="point_label">
+                  <property name="text">
+                   <string>point</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="point_space">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="point_edit"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,1,5">
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="text">
+                   <string>env name</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="env_name_edit"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="sample_layout" stretch="1,1,5">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="sample_label">
+                  <property name="text">
+                   <string>sample</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="sample_spacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="sample_editor"/>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="bit_pic_label">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="index_group">
+          <property name="title">
+           <string>Component Collector</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <layout class="QHBoxLayout" name="page_layout" stretch="1,1,1,1,1,1">
+             <item>
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>        Page</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="page_spinBox">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_4">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>      Volume</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="volume_spinBox">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>10000000</number>
+               </property>
+               <property name="value">
+                <number>10</number>
+               </property>
+               <property name="displayIntegerBase">
+                <number>10</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_3">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QTableViewComponentWidget" name="table_view_component">
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="editor_group">
+       <property name="title">
+        <string>Component Editor</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QSplitter" name="splitter">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <widget class="QTreeViewComponentWidget" name="tree_view_component"/>
+          <widget class="QTableViewDat" name="table_view_dat"/>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionQueryAll"/>
+   <addaction name="actionQuery"/>
+   <addaction name="actionQueryHistory"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionImport"/>
+   <addaction name="actionToFile"/>
+   <addaction name="actionSaveAs"/>
+   <addaction name="actionRefresh"/>
+   <addaction name="actionChipCheck"/>
+   <addaction name="actionRevertBits"/>
+  </widget>
+  <action name="actionImport">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/local.png</normaloff>:/local.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import</string>
+   </property>
+  </action>
+  <action name="actionToFile">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/file-code.png</normaloff>:/file-code.png</iconset>
+   </property>
+   <property name="text">
+    <string>ToFile</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/save.png</normaloff>:/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/save_as.png</normaloff>:/save_as.png</iconset>
+   </property>
+   <property name="text">
+    <string>SaveAs</string>
+   </property>
+  </action>
+  <action name="actionQuery">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/database-search.png</normaloff>:/database-search.png</iconset>
+   </property>
+   <property name="text">
+    <string>Query</string>
+   </property>
+  </action>
+  <action name="actionRefresh">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/refresh.png</normaloff>:/refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Refresh</string>
+   </property>
+  </action>
+  <action name="actionQueryAll">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/database-download.png</normaloff>:/database-download.png</iconset>
+   </property>
+   <property name="text">
+    <string>QueryAll</string>
+   </property>
+   <property name="toolTip">
+    <string>Query All Qubit</string>
+   </property>
+  </action>
+  <action name="actionChipCheck">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/tool.png</normaloff>:/tool.png</iconset>
+   </property>
+   <property name="text">
+    <string>ChipCheck</string>
+   </property>
+  </action>
+  <action name="actionQueryHistory">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/database-success.png</normaloff>:/database-success.png</iconset>
+   </property>
+   <property name="text">
+    <string>QueryHistory</string>
+   </property>
+  </action>
+  <action name="actionRevertBits">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/update.png</normaloff>:/update.png</iconset>
+   </property>
+   <property name="text">
+    <string>RevertBits</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QTreeViewComponentWidget</class>
+   <extends>QTreeView</extends>
+   <header>.widgets.component.tree_view_component</header>
+  </customwidget>
+  <customwidget>
+   <class>QTableViewComponentWidget</class>
+   <extends>QTableView</extends>
+   <header>.widgets.component.table_view_component</header>
+  </customwidget>
+  <customwidget>
+   <class>QTableViewDat</class>
+   <extends>QTableView</extends>
+   <header>.widgets.result.table_view_dat</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="_imgs/_imgs.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionQueryAll</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>query_all()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>346</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionQuery</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>query_one()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>346</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSave</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>save_one()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>346</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionImport</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>bit_import()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>346</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionToFile</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>save_to_file()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>346</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRefresh</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>refresh()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>346</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSaveAs</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>save_as()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionChipCheck</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chip_check()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>553</x>
+     <y>367</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionQueryHistory</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>query_history()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>607</x>
+     <y>367</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>page_spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>page_change(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>169</x>
+     <y>312</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>607</x>
+     <y>367</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>volume_spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>volume_change(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>453</x>
+     <y>312</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>607</x>
+     <y>367</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRevertBits</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>show_revert_bits()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>607</x>
+     <y>367</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>query_all()</slot>
+  <slot>query_one()</slot>
+  <slot>save_one()</slot>
+  <slot>bit_import()</slot>
+  <slot>save_to_file()</slot>
+  <slot>refresh()</slot>
+  <slot>save_as()</slot>
+  <slot>chip_check()</slot>
+  <slot>query_history()</slot>
+  <slot>page_change(int)</slot>
+  <slot>volume_change(int)</slot>
+  <slot>show_revert_bits()</slot>
+ </slots>
+</ui>

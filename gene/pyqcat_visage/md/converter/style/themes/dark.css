@@ -1,0 +1,48 @@
+:root{
+  --bg-color-dark: #1f1f1f;
+  --dark-trait: #141414;
+  --bg-color: #292929;
+  --side-bar-bg-color: var(--bg-color-dark)
+}
+
+
+body{
+    background: #292929;
+    color: white;
+}
+
+content {
+    background: #292929;
+}
+
+table tr:nth-child(2n), thead {
+    background-color: #1f1f1f;
+}
+
+table tbody tr:nth-child(2n + 1) {
+    background-color: #292929;
+}
+
+table tr th {
+    border-color: #141414;
+}
+table tr {
+    border-top-color: #141414;
+}
+table tr td {
+    border-color: #141414;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: orange;
+}
+h2 a{
+    color: orange;
+}
+
+p strong{
+    color: #135ce0;
+}
+strong{
+    color:red
+}

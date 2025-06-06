@@ -1,0 +1,99 @@
+{
+  "_id": "12345",
+  "dag_id": "001",
+  "dag_name": "SingleQubitCalibrate",
+  "username": "A_9527",
+  "official": true,
+  "node_edges": {
+    "ab": {"cd": {"weight": 1}},
+    "cd": {"df": {"weight": 1}, "ef": {"weight": 2}},
+    "df": {"ff": {"weight": 1}},
+    "ef": {"ff": {"weight": 1}},
+    "ff": {}
+  },
+  "node_params": {
+    "ab": {
+      "exp_name": "FindBusCavityFreq",
+      "exp_params": {
+        "experiment_options": {},
+        "analysis_options": {},
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [100, 200]
+    },
+    "cd": {
+      "exp_name": "CavityFluxScan",
+      "exp_params": {},
+      "adjust_params": {},
+      "location": [200, 200]
+    },
+    "df": {
+      "exp_name": "QubitSpectrum",
+      "exp_params": {},
+      "adjust_params": {},
+      "location": [300, 100]
+    },
+    "ef": {
+      "exp_name": "RabiScanAmp",
+      "exp_params": {},
+      "adjust_params": {},
+      "location": [300, 300]
+    },
+    "ff": {
+      "exp_name": "SingleShot",
+      "exp_params": {},
+      "adjust_params": {},
+      "location": [400, 200]
+    }
+  },
+  "execute_params": {
+    "is_traceback": false,
+    "is_report": false,
+    "start_node": null,
+    "search_type": "weight_search"
+  },
+  "node_result": {
+    "ab": [
+      {
+        "exp_id" : "1663291550.1327791",
+        "exp_params" : {
+          "experiment_options": {},
+          "analysis_options": {}
+        },
+        "status": null,
+        "result" : {
+          "R2" : 0.0203182329424214
+        },
+        "create_time" : "2022-09-16T09:25:50.134Z"
+      },
+      {
+        "exp_id" : "1663291550.1327792",
+        "exp_params" : {
+          "experiment_options": {},
+          "analysis_options": {}
+        },
+        "status": null,
+        "result" : {
+          "R2" : 0.0203182329424214
+        },
+        "create_time" : "2022-09-16T09:25:50.134Z"
+      }
+    ],
+    "cd": [],
+    "df": [],
+    "ef": [],
+    "ff": []
+  },
+  "edge_list": [
+    ["ab", "cd"],
+    ["cd", "df"],
+    ["cd", "ef"],
+    ["df", "ff"],
+    ["ef", "ff"]
+  ],
+  "execute_nodes": ["ab", "cd", "cd", "ab"],
+  "traceback_note": [ 0, 0, 1, 2],
+  "dag_report": "",
+  "create_time": "2022-09-20 09:25:50"
+}

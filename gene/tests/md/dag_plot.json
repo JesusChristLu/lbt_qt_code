@@ -1,0 +1,667 @@
+{
+  "nodes": [
+    "CavityFreqSpectrumNode",
+    "QubitSpectrumNode",
+    "RabiScanAmpNode",
+    "SampleWidthOptimizeNode",
+    "ReadoutFreqCalibrateNode",
+    "ReadoutPowerCalibrateNode"
+  ],
+  "edges": {
+    "CavityFreqSpectrumNode": [
+      "QubitSpectrumNode"
+    ],
+    "QubitSpectrumNode": [
+      "RabiScanAmpNode"
+    ],
+    "RabiScanAmpNode": [
+      "SampleWidthOptimizeNode",
+      "ReadoutFreqCalibrateNode"
+    ],
+    "SampleWidthOptimizeNode": [
+      "ReadoutPowerCalibrateNode"
+    ],
+    "ReadoutFreqCalibrateNode": [
+      "ReadoutPowerCalibrateNode"
+    ],
+    "ReadoutPowerCalibrateNode": []
+  },
+  "execute_path": [
+    "CavityFreqSpectrumNode",
+    "QubitSpectrumNode",
+    "RabiScanAmpNode",
+    "SampleWidthOptimizeNode",
+    "ReadoutFreqCalibrateNode",
+    "RabiScanAmpNode",
+    "SampleWidthOptimizeNode",
+    "RabiScanAmpNode",
+    "QubitSpectrumNode",
+    "RabiScanAmpNode",
+    "SampleWidthOptimizeNode",
+    "RabiScanAmpNode",
+    "SampleWidthOptimizeNode",
+    "ReadoutFreqCalibrateNode",
+    "ReadoutPowerCalibrateNode"
+  ],
+  "node_result": [
+    [
+      "CavityFreqSpectrumNode",
+      {
+        "exp_id": "166730508302831",
+        "result": {
+          "R2": 0.96,
+          "quality": "perfect"
+        },
+        "exp_params": {},
+        "conf_params": {},
+        "status": "success",
+        "reason": "",
+        "exp_chg_record": {},
+        "conf_chg_record": {},
+        "create_time": "2022-11-01 20:18:04"
+      }
+    ],
+    [
+      "QubitSpectrumNode",
+      {
+        "exp_id": "166730508408354",
+        "result": {
+          "R2": 0.99,
+          "quality": "perfect"
+        },
+        "exp_params": {},
+        "conf_params": {},
+        "status": "success",
+        "reason": "",
+        "exp_chg_record": {},
+        "conf_chg_record": {},
+        "create_time": "2022-11-01 20:18:05"
+      }
+    ],
+    [
+      "RabiScanAmpNode",
+      {
+        "exp_id": "166730508512427",
+        "result": {
+          "R2": 0.91,
+          "quality": "perfect"
+        },
+        "exp_params": {},
+        "conf_params": {},
+        "status": "success",
+        "reason": "",
+        "exp_chg_record": {},
+        "conf_chg_record": {},
+        "create_time": "2022-11-01 20:18:06"
+      }
+    ],
+    [
+      "SampleWidthOptimizeNode",
+      {
+        "exp_id": "166730508616330",
+        "result": {
+          "R2": 0.97,
+          "quality": "perfect"
+        },
+        "exp_params": {},
+        "conf_params": {},
+        "status": "success",
+        "reason": "",
+        "exp_chg_record": {},
+        "conf_chg_record": {},
+        "create_time": "2022-11-01 20:18:07"
+      }
+    ],
+    [
+      "ReadoutFreqCalibrateNode",
+      {
+        "exp_id": "166730508720260",
+        "result": {
+          "R2": 0.51,
+          "quality": "bad"
+        },
+        "exp_params": {},
+        "conf_params": {},
+        "status": "fail",
+        "reason": "the parameters error!",
+        "exp_chg_record": {},
+        "conf_chg_record": {},
+        "create_time": "2022-11-01 20:18:08"
+      }
+    ],
+    [
+      "RabiScanAmpNode",
+      {
+        "exp_id": "166730508823953",
+        "result": {
+          "R2": 0.99,
+          "quality": "perfect"
+        },
+        "exp_params": {
+          "analysis_options": {
+            "is_plot": -2
+          },
+          "exp_options": {
+            "data_type": "amp_phasechange_",
+            "register_pulse_save": -1,
+            "loop_num": 3
+          }
+        },
+        "conf_params": {
+          "q3": {
+            "z_dc_channel": 11
+          }
+        },
+        "status": "success",
+        "reason": "",
+        "exp_chg_record": {
+          "analysis_options.is_plot": [
+            true,
+            -2
+          ],
+          "exp_options.data_type": [
+            "amp_phase",
+            "amp_phasechange_"
+          ],
+          "exp_options.register_pulse_save": [
+            false,
+            -1
+          ],
+          "exp_options.loop_num": [
+            1,
+            3
+          ]
+        },
+        "conf_chg_record": {
+          "q3": {
+            "z_dc_channel": [
+              7,
+              11
+            ]
+          }
+        },
+        "create_time": "2022-11-01 20:18:09"
+      }
+    ],
+    [
+      "SampleWidthOptimizeNode",
+      {
+        "exp_id": "166730508928136",
+        "result": {
+          "R2": 0.58,
+          "quality": "bad"
+        },
+        "exp_params": {
+          "analysis_options": {
+            "data_key": "['Pacify']change_"
+          },
+          "exp_options": {
+            "simulator_data_path": "none123111change_",
+            "show_result": -2
+          }
+        },
+        "conf_params": {
+          "q3": {
+            "name": "q3change_",
+            "drive_freq": "none123111",
+            "goodness": -1,
+            "z_dc_channel": 15
+          }
+        },
+        "status": "fail",
+        "reason": "the parameters error!",
+        "exp_chg_record": {
+          "analysis_options.data_key": [
+            "['Pacify']",
+            "['Pacify']change_"
+          ],
+          "exp_options.simulator_data_path": [
+            null,
+            "none123111change_"
+          ],
+          "exp_options.show_result": [
+            true,
+            -2
+          ]
+        },
+        "conf_chg_record": {
+          "q3": {
+            "name": [
+              "q3",
+              "q3change_"
+            ],
+            "drive_freq": [
+              null,
+              "none123111"
+            ],
+            "goodness": [
+              false,
+              -1
+            ],
+            "z_dc_channel": [
+              11,
+              15
+            ]
+          }
+        },
+        "create_time": "2022-11-01 20:18:10"
+      }
+    ],
+    [
+      "RabiScanAmpNode",
+      {
+        "exp_id": "166730509031992",
+        "result": {
+          "R2": 0.59,
+          "quality": "bad"
+        },
+        "exp_params": {
+          "analysis_options": {
+            "is_plot": 4
+          }
+        },
+        "conf_params": {
+          "q3": {
+            "_col": "none123111",
+            "goodness": 1,
+            "T1": 20004,
+            "dc_max": 2.0,
+            "idle_point": 2.0
+          }
+        },
+        "status": "fail",
+        "reason": "the parameters error!",
+        "exp_chg_record": {
+          "analysis_options.is_plot": [
+            -2,
+            4
+          ]
+        },
+        "conf_chg_record": {
+          "q3": {
+            "_col": [
+              null,
+              "none123111"
+            ],
+            "goodness": [
+              -1,
+              1
+            ],
+            "T1": [
+              20000,
+              20004
+            ],
+            "dc_max": [
+              0.0,
+              2.0
+            ],
+            "idle_point": [
+              0.0,
+              2.0
+            ]
+          }
+        },
+        "create_time": "2022-11-01 20:18:11"
+      }
+    ],
+    [
+      "QubitSpectrumNode",
+      {
+        "exp_id": "16673050913642",
+        "result": {
+          "R2": 0.98,
+          "quality": "perfect"
+        },
+        "exp_params": {
+          "analysis_options": {
+            "is_plot": -2,
+            "window_length": 14,
+            "data_key": "none123111"
+          },
+          "exp_options": {
+            "schedule_show_measure": 158,
+            "enable_one_sweep": -1,
+            "measure_bits": "none123111"
+          }
+        },
+        "conf_params": {
+          "q3": {
+            "ac": 9.0
+          }
+        },
+        "status": "success",
+        "reason": "",
+        "exp_chg_record": {
+          "analysis_options.is_plot": [
+            true,
+            -2
+          ],
+          "analysis_options.window_length": [
+            11,
+            14
+          ],
+          "analysis_options.data_key": [
+            null,
+            "none123111"
+          ],
+          "exp_options.schedule_show_measure": [
+            150,
+            158
+          ],
+          "exp_options.enable_one_sweep": [
+            false,
+            -1
+          ],
+          "exp_options.measure_bits": [
+            null,
+            "none123111"
+          ]
+        },
+        "conf_chg_record": {
+          "q3": {
+            "ac": [
+              0.0,
+              9.0
+            ]
+          }
+        },
+        "create_time": "2022-11-01 20:18:12"
+      }
+    ],
+    [
+      "RabiScanAmpNode",
+      {
+        "exp_id": "166730509242156",
+        "result": {
+          "R2": 0.91,
+          "quality": "perfect"
+        },
+        "exp_params": {
+          "analysis_options": {
+            "is_plot": 12
+          }
+        },
+        "conf_params": {
+          "q3": {
+            "z_dc_channel": 19,
+            "bit": 12
+          }
+        },
+        "status": "success",
+        "reason": "",
+        "exp_chg_record": {
+          "analysis_options.is_plot": [
+            4,
+            12
+          ]
+        },
+        "conf_chg_record": {
+          "q3": {
+            "z_dc_channel": [
+              15,
+              19
+            ],
+            "bit": [
+              3,
+              12
+            ]
+          }
+        },
+        "create_time": "2022-11-01 20:18:13"
+      }
+    ],
+    [
+      "SampleWidthOptimizeNode",
+      {
+        "exp_id": "166730509346825",
+        "result": {
+          "R2": 0.53,
+          "quality": "bad"
+        },
+        "exp_params": {
+          "exp_options": {
+            "show_result": 17
+          }
+        },
+        "conf_params": {
+          "q3": {
+            "z_dc_channel": 27,
+            "probe_freq": 6500.257,
+            "T2": 10010
+          }
+        },
+        "status": "fail",
+        "reason": "the parameters error!",
+        "exp_chg_record": {
+          "exp_options.show_result": [
+            -2,
+            17
+          ]
+        },
+        "conf_chg_record": {
+          "q3": {
+            "z_dc_channel": [
+              19,
+              27
+            ],
+            "probe_freq": [
+              6495.257,
+              6500.257
+            ],
+            "T2": [
+              10000,
+              10010
+            ]
+          }
+        },
+        "create_time": "2022-11-01 20:18:14"
+      }
+    ],
+    [
+      "RabiScanAmpNode",
+      {
+        "exp_id": "166730509450931",
+        "result": {
+          "R2": 0.96,
+          "quality": "perfect"
+        },
+        "exp_params": {
+          "analysis_options": {
+            "is_plot": 22
+          }
+        },
+        "conf_params": {
+          "q3": {
+            "z_dc_channel": 29,
+            "tunable": -1,
+            "update_time": "none123111"
+          }
+        },
+        "status": "success",
+        "reason": "",
+        "exp_chg_record": {
+          "analysis_options.is_plot": [
+            12,
+            22
+          ]
+        },
+        "conf_chg_record": {
+          "q3": {
+            "z_dc_channel": [
+              27,
+              29
+            ],
+            "tunable": [
+              false,
+              -1
+            ],
+            "update_time": [
+              null,
+              "none123111"
+            ]
+          }
+        },
+        "create_time": "2022-11-01 20:18:15"
+      }
+    ],
+    [
+      "SampleWidthOptimizeNode",
+      {
+        "exp_id": "166730509555525",
+        "result": {
+          "R2": 0.94,
+          "quality": "perfect"
+        },
+        "exp_params": {
+          "exp_options": {
+            "show_result": 22
+          }
+        },
+        "conf_params": {
+          "q3": {
+            "z_dc_channel": 45,
+            "probe_freq": 6507.257,
+            "T2": 10025
+          }
+        },
+        "status": "success",
+        "reason": "",
+        "exp_chg_record": {
+          "exp_options.show_result": [
+            17,
+            22
+          ]
+        },
+        "conf_chg_record": {
+          "q3": {
+            "z_dc_channel": [
+              29,
+              45
+            ],
+            "probe_freq": [
+              6500.257,
+              6507.257
+            ],
+            "T2": [
+              10010,
+              10025
+            ]
+          }
+        },
+        "create_time": "2022-11-01 20:18:16"
+      }
+    ],
+    [
+      "ReadoutFreqCalibrateNode",
+      {
+        "exp_id": "166730509659918",
+        "result": {
+          "R2": 0.96,
+          "quality": "perfect"
+        },
+        "exp_params": {
+          "analysis_options": {
+            "data_key": "['Frequency']change_",
+            "diff_threshold": 10.1
+          },
+          "exp_options": {
+            "simulator_data_path": "none123111change_change_",
+            "simulator_shape": "none123111change_",
+            "show_result": -2
+          }
+        },
+        "conf_params": {
+          "q3": {
+            "drive_freq": "none123111change_",
+            "T2": 10038,
+            "ac": 19.0
+          }
+        },
+        "status": "success",
+        "reason": "",
+        "exp_chg_record": {
+          "analysis_options.data_key": [
+            "['Frequency']",
+            "['Frequency']change_"
+          ],
+          "analysis_options.diff_threshold": [
+            0.1,
+            10.1
+          ],
+          "exp_options.simulator_data_path": [
+            null,
+            "none123111change_change_"
+          ],
+          "exp_options.simulator_shape": [
+            null,
+            "none123111change_"
+          ],
+          "exp_options.show_result": [
+            true,
+            -2
+          ]
+        },
+        "conf_chg_record": {
+          "q3": {
+            "drive_freq": [
+              "none123111",
+              "none123111change_"
+            ],
+            "T2": [
+              10025,
+              10038
+            ],
+            "ac": [
+              9.0,
+              19.0
+            ]
+          }
+        },
+        "create_time": "2022-11-01 20:18:17"
+      }
+    ],
+    [
+      "ReadoutPowerCalibrateNode",
+      {
+        "exp_id": "16673050976434",
+        "result": {
+          "R2": 1.0,
+          "quality": "perfect"
+        },
+        "exp_params": {},
+        "conf_params": {},
+        "status": "success",
+        "reason": "",
+        "exp_chg_record": {},
+        "conf_chg_record": {},
+        "create_time": "2022-11-01 20:18:18"
+      }
+    ]
+  ],
+  "pos": {
+    "CavityFreqSpectrumNode": [
+      100,
+      100
+    ],
+    "QubitSpectrumNode": [
+      200,
+      130
+    ],
+    "RabiScanAmpNode": [
+      300,
+      100
+    ],
+    "SampleWidthOptimizeNode": [
+      400,
+      130
+    ],
+    "ReadoutFreqCalibrateNode": [
+      400,
+      70
+    ],
+    "ReadoutPowerCalibrateNode": [
+      500,
+      95
+    ]
+  }
+}

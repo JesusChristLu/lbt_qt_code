@@ -1,0 +1,90 @@
+[{
+    "dag_name" : "SingleQubitCalibrate",
+    "official" : true,
+    "execute_params" : {
+        "is_traceback" : false,
+        "is_report" : false,
+        "start_node" : null,
+        "search_type" : "weight_search"
+    },
+    "node_edges" : {
+        "CavityFreqSpectrumNode" : {
+            "QubitSpectrumNode" : {
+                "weight" : 1
+            }
+        },
+        "QubitSpectrumNode" : {
+            "RabiScanAmpNode" : {
+                "weight" : 1
+            }
+        },
+        "RabiScanAmpNode" : {
+            "SampleWidthOptimizeNode" : {
+                "weight" : 1
+            },
+            "ReadoutFreqCalibrateNode" : {
+                "weight" : 1
+            }
+        },
+        "SampleWidthOptimizeNode" : {
+            "ReadoutPowerCalibrateNode" : {
+                "weight" : 1
+            }
+        },"ReadoutFreqCalibrateNode" : {
+            "ReadoutPowerCalibrateNode" : {
+                "weight" : 1
+            }
+        },
+        "ReadoutPowerCalibrateNode" : {}
+    },
+    "node_params" : {
+        "CavityFreqSpectrumNode" : {
+            "exp_name" : "CavityFreqSpectrum",
+            "adjust_params" : {},
+            "location" : [
+                100,
+                150
+            ]
+        },
+        "QubitSpectrumNode" : {
+            "exp_name" : "QubitSpectrum",
+            "adjust_params" : {},
+            "location" : [
+                200,
+                150
+            ]
+        },
+        "RabiScanAmpNode" : {
+            "exp_name" : "RabiScanAmp",
+            "adjust_params" : {},
+            "location" : [
+                300,
+                50
+            ]
+        },
+        "SampleWidthOptimizeNode" : {
+            "exp_name" : "SampleWidthOptimize",
+            "adjust_params" : {},
+            "location" : [
+                400,
+                80
+            ]
+        },
+        "ReadoutFreqCalibrateNode" : {
+            "exp_name" : "ReadoutFreqCalibrate",
+            "adjust_params" : {},
+            "location" : [
+                400,
+                20
+            ]
+        },
+        "ReadoutPowerCalibrateNode" : {
+            "exp_name" : "ReadoutPowerCalibrate",
+            "adjust_params" : {},
+            "location" : [
+                500,
+                50
+            ]
+        }
+    }
+}]

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SetValueWindow</class>
+ <widget class="QMainWindow" name="SetValueWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>460</width>
+    <height>106</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,1,1">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>SetValue</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>OK</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>_imgs/ok.png</normaloff>_imgs/ok.png</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SetValueWindow</receiver>
+   <slot>changeValue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>306</x>
+     <y>68</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>208</x>
+     <y>29</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>changeValue()</slot>
+ </slots>
+</ui>

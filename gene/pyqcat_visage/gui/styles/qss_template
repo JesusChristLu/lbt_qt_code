@@ -1,0 +1,241 @@
+
+/*  ----------------- Bugfix: The mouse suspension status is abnormal ----------------- */
+QWidget::item:hover:!selected {
+}
+*{
+    color: {{FirstFontColor}};
+    font-size: {{FirstFontSize}};
+    line-height: 13px;
+    background-color: {{FirstBackGround}};
+    selection-background-color: {{SelectBackGround}};
+
+}
+QToolBar,QTreeView,QgraphicsView,QTableWiget,QTextEditlooger,QLineEdit{
+border: 1px solid {{LayoutLine}}
+}
+QGraphicsView, QTextEdit{
+background-color:{{SecondBackGround}};
+}
+
+QMenu:checked{
+background-color: {{SelectBackGround}}
+}
+QMenuBar::item{
+  height: 32px;
+  padding: 8px;
+}
+
+QToolTip {
+  padding: 5px;
+  border-radius: 4px;
+  background-color: {{HintBackGround}};
+}
+QComboBox::item:selected,
+QCalendarWidget QMenu::item:selected,
+QMenu::item:selected {
+  background-color: {{SelectBackGround}};
+  border-radius: 0px;
+}
+QMenuBar::item:selected,
+QMenuBar::item:pressed {
+  background-color:  {{SelectBackGround}};
+}
+
+QTabBar::tab:top:selected,
+QTabBar::tab:top:hover {
+color: {{SelectBackGround}};
+  border-bottom: 3px solid {{SelectBackGround}};
+font-weight: bold;
+}
+
+QTabBar::tab:bottom:selected,
+QTabBar::tab:bottom:hover {
+  color: {{SelectBackGround}};
+  border-top: 2px solid {{SelectBackGround}};
+  font-weight: bold;
+}
+
+QTabBar::tab:right:selected,
+QTabBar::tab:right:hover {
+  color: {{SelectBackGround}};
+  border-left: 2px solid {{SelectBackGround}};
+font-weight: bold;
+}
+
+QTabBar::tab:left:selected,
+QTabBar::tab:left:hover {
+  color: {{SelectBackGround}};
+  border-right: 2px solid {{SelectBackGround}};
+padding: 10px 0 10px 0;
+font-weight: bold;
+}
+QTabBar::tab:top{
+	border-bottom: 3px solid {{FirstBackGround}};
+	font-weight: bold;
+	margin-right: 10px
+}
+
+QToolButton:hover {
+  background: {{HintBackGround}};
+
+}
+
+/*  ----------------- QtreeView QtableView QListView ----------------- */
+
+QHeaderView::section{
+background-color: {{SecondBackGround}}
+}
+QHeaderView {
+  background-color: {{SecondBackGround}};
+  border: 0px transparent {{SecondBackGround}};
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+QTableCornerButton::section
+{background-color: {{SecondBackGround}}; }
+
+QTreeView,
+QTableView,
+QListView {
+  font-weight: normal;
+  alternate-background-color: {{FirstBackGround}};
+}
+QTreeView::item,
+QTableView::item,
+QListView::item{
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-weight: normal;
+}
+QTreeView::branch:closed:has-children:has-siblings,
+QTreeView::branch:closed:has-children:!has-siblings {
+  image: url(icon:/list-close.svg);
+}
+
+QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children:has-siblings {
+  image: url(icon:/list-open.svg);
+}
+
+QTreeView::branch:has-siblings:!adjoins-item {
+  border-image: url(icon:/list-line.svg) 0;
+}
+
+QTreeView::branch:has-siblings:adjoins-item {
+    border-image: url(icon:/list-more.svg) 0;
+}
+
+QTreeView::branch:!has-children:!has-siblings:adjoins-item,
+QTreeView::branch:has-children:!has-siblings:adjoins-item {
+    border-image: url(icon:/list-end.svg) 0;
+}
+QTreeView::item:hover,
+QTableView::item:hover,
+QListView::item:hover{
+  background-color: {{HoverBackGround}};
+  color: {{HoverFontColor}}
+}
+
+QHeaderView::section{
+color: {{SelectBackGround}};
+padding-left: 0px;
+padding-right: 0px
+}
+
+QTreeView{
+    show-decoration-selected:0
+}
+
+/*  --------- QRadioButton  QCheckBox -------------  */
+
+/*
+QCheckBox:enabled{
+    image: url(icon:/checkbox-checked.svg);
+}
+
+QCheckBox:disabled{
+    image: url(icon:/checkbox-unchecked.svg);
+}
+
+QCheckBox::indicator:unchecked {
+    image: url(icon:/checkbox-unchecked.svg);
+}
+
+QCheckBox::indicator:checked {
+    image: url(icon:/checkbox-checked.svg);
+}
+
+QCheckBox::indicator:checked:pressed {
+    image: url(icon:/checkbox-checked.svg);
+}
+*/
+
+QWidget[objectName="TitleWidget"]{
+background-color: {{FirstBackGround}};
+border-bottom: 2px solid {{LayoutLine}};
+border-top: 4px solid qlineargradient(x1:0, y1:0, x2:0, y2:1,stop:0 {{FirstBackGround}},stop:1 {{SelectBackGround}});
+border-left: 4px solid qlineargradient(x1:0, y1:0, x2:1, y2:0,stop:0 {{FirstBackGround}},stop:1 {{SelectBackGround}});
+border-right: 4px solid qlineargradient(x1:0, y1:0, x2:1, y2:0,stop:0 {{FirstBackGround}},stop:1 {{SelectBackGround}});
+
+height: 30px;
+padding: 10px;
+}
+
+QWidget[objectName="RealWidget"]{
+border-bottom: 4px solid qlineargradient(x1:0, y1:0, x2:0, y2:1,stop:0 {{FirstBackGround}},stop:1 {{SelectBackGround}});
+border-left: 4px solid qlineargradient(x1:0, y1:0, x2:1, y2:0,stop:0 {{FirstBackGround}},stop:1 {{SelectBackGround}});
+border-right: 4px solid qlineargradient(x1:0, y1:0, x2:1, y2:0,stop:0 {{FirstBackGround}},stop:1 {{SelectBackGround}});
+}
+/*  --------- Button --------------- */
+
+
+
+/*  --------- Button for Title Window --------------- */
+QPushButton[objectName='WindowMin']
+{
+image: url(icon:/window-min.svg);
+text-align:top;
+background:#6DDF6D;
+border-radius:5px;
+border:none;
+font-size:13px;
+}
+QPushButton[objectName='WindowMin']:hover{background:green;}
+
+QPushButton[objectName='WindowMax']
+{
+image: url(icon:/window-max.svg);
+background:#F7D674;border-radius:5px;
+border:none;
+font-size:13px;
+}
+QPushButton[objectName='WindowMax']:hover{background:orange;}
+
+QPushButton[objectName='WindowClose']
+{
+image: url(icon:/window-close.svg);
+background-color: #F76677;
+border-radius:5px;
+border:none;
+font-size:13px;
+}
+QPushButton[objectName='WindowClose']:hover{background:red;}
+
+
+
+
+QLineEdit{
+  background-color: {{SecondBackGround}};
+  border: 2px solid {{LayoutLine}};
+  border-radius: 4px;
+}
+
+
+/*  As placeholder */
+QGraphicsView{
+    background-color: {{SecondBackGround}}
+    font-size: {{SecondFontSize}}
+    color: {{SecondFontColor}},
+    color: {{ThemeColor}}
+}

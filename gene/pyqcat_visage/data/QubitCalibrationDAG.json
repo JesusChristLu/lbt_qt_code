@@ -1,0 +1,753 @@
+[{
+  "dag_name": "SingleQubitCalibrationDAG",
+  "official": true,
+  "node_edges": {
+    "CavityFreqSpectrum_0x229899961c0": {
+      "QubitSpectrum_0x2298c7a2200": {
+        "weight": 1
+      }
+    },
+    "QubitSpectrum_0x2298c7a2200": {
+      "QubitSpectrum_0x2298cebd9c0": {
+        "weight": 1
+      }
+    },
+    "QubitSpectrum_0x2298cebd9c0": {
+      "RabiScanWidth_0x2298d784640": {
+        "weight": 1
+      }
+    },
+    "XpiDetection_0x2298d24ee00": {
+      "ReadoutFreqCalibrate_0x2298db30400": {
+        "weight": 1
+      },
+      "SampleWidthOptimize_0x2298c735cc0": {
+        "weight": 2
+      }
+    },
+    "RabiScanWidth_0x2298d784640": {
+      "XpiDetection_0x2298d24ee00": {
+        "weight": 1
+      }
+    },
+    "ReadoutFreqCalibrate_0x2298db30400": {
+      "ReadoutPowerCalibrate_0x22989996b40": {
+        "weight": 1
+      }
+    },
+    "ReadoutPowerCalibrate_0x22989996b40": {
+      "ReadoutFreqCalibrate_0x2298d0d32c0": {
+        "weight": 1
+      }
+    },
+    "SampleWidthOptimize_0x2298c735cc0": {
+      "ReadoutPowerCalibrate_0x22989996b40": {
+        "weight": 1
+      }
+    },
+    "ReadoutFreqCalibrate_0x2298d0d32c0": {
+      "SingleShot_0x2298e794600": {
+        "weight": 1
+      }
+    },
+    "SingleShot_0x2298e794600": {
+      "QubitFreqCalibration_0x22988baa180": {
+        "weight": 1
+      }
+    },
+    "QubitFreqCalibration_0x22988baa180": {
+      "RabiScanAmp_0x2298d15b4c0": {
+        "weight": 1
+      }
+    },
+    "RabiScanAmp_0x2298d15b4c0": {
+      "DetuneCalibration_0x2298cf4b700": {
+        "weight": 1
+      }
+    },
+    "DetuneCalibration_0x2298cf4b700": {
+      "AmpOptimize_0x1c911c8e340": {
+        "weight": 1
+      }
+    },
+    "SingleShot_0x2298f5ee800": {
+      "T1_0x2299025da40": {
+        "weight": 3
+      },
+      "T2Ramsey_0x2299052c800": {
+        "weight": 2
+      },
+      "RBSingle_0x2299025d940": {
+        "weight": 1
+      }
+    },
+    "AmpOptimize_0x2298db30c00": {
+      "SingleShot_0x2298f5ee800": {
+        "weight": 1
+      }
+    },
+    "T1_0x2299025da40": {},
+    "T2Ramsey_0x2299052c800": {},
+    "RBSingle_0x2299025d940": {},
+    "AmpOptimize_0x1c911c8e340": {
+      "AmpOptimize_0x2298db30c00": {
+        "weight": 1
+      }
+    }
+  },
+  "node_params": {
+    "CavityFreqSpectrum_0x229899961c0": {
+      "exp_name": "CavityFreqSpectrum",
+      "exp_params": {
+        "experiment_options": {
+          "fc_list": "normal | None",
+          "points": 61,
+          "readout_power": null,
+          "pi_amp": null,
+          "add_pi_pulse": false,
+          "scope": 3,
+          "z_amp": null
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            8
+          ],
+          "quality_bounds": [
+            0.98,
+            0.95,
+            0.85
+          ]
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        -696.040312626237,
+        -223.89609022783716
+      ],
+      "port_pos": [
+        "left",
+        "right"
+      ]
+    },
+    "QubitSpectrum_0x2298c7a2200": {
+      "exp_name": "QubitSpectrum",
+      "exp_params": {
+        "experiment_options": {
+          "freq_list": "normal | None",
+          "drive_power": null,
+          "z_amp": null,
+          "use_square": true,
+          "band_width": 50.0,
+          "fine_flag": false,
+          "rough_window_length": 7,
+          "fine_window_length": 11,
+          "rough_freq_distance": 70.0,
+          "fine_freq_distance": 80.0,
+          "xpulse_params": {
+            "time": 5000,
+            "offset": 15,
+            "amp": 1.0,
+            "detune": 0,
+            "freq": 466.667
+          },
+          "zpulse_params": {
+            "time": 5100,
+            "amp": 0.0,
+            "sigma": 3,
+            "fast_m": true
+          }
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            8
+          ],
+          "quality_bounds": [
+            0.8,
+            0.6,
+            0.5
+          ],
+          "snr_bounds": 1.5
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        -471.8769170668304,
+        -435.8041758285561
+      ],
+      "port_pos": [
+        "left",
+        "right"
+      ]
+    },
+    "QubitSpectrum_0x2298cebd9c0": {
+      "exp_name": "QubitSpectrum",
+      "exp_params": {
+        "experiment_options": {
+          "freq_list": "normal | None",
+          "drive_power": null,
+          "z_amp": null,
+          "use_square": true,
+          "band_width": 50.0,
+          "fine_flag": false,
+          "rough_window_length": 7,
+          "fine_window_length": 11,
+          "rough_freq_distance": 70.0,
+          "fine_freq_distance": 80.0,
+          "xpulse_params": {
+            "time": 5000,
+            "offset": 15,
+            "amp": 1.0,
+            "detune": 0,
+            "freq": 466.667
+          },
+          "zpulse_params": {
+            "time": 5100,
+            "amp": 0.0,
+            "sigma": 3,
+            "fast_m": true
+          }
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            8
+          ],
+          "quality_bounds": [
+            0.8,
+            0.6,
+            0.5
+          ],
+          "snr_bounds": 1.5
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        -300.7924561825507,
+        -253.39415874855843
+      ],
+      "port_pos": [
+        "left",
+        "right"
+      ]
+    },
+    "XpiDetection_0x2298d24ee00": {
+      "exp_name": "XpiDetection",
+      "exp_params": {
+        "experiment_options": {
+          "expect_value": 0.7,
+          "scope": 0.1,
+          "max_loops": 5,
+          "name": "Xpi",
+          "amps": "qarange | (0.0, 1.0, 0.02)",
+          "drive_power": null
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            8
+          ]
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        57.08012302203351,
+        -242.49904288608744
+      ],
+      "port_pos": [
+        "left",
+        "right"
+      ]
+    },
+    "RabiScanWidth_0x2298d784640": {
+      "exp_name": "RabiScanWidth",
+      "exp_params": {
+        "experiment_options": {
+          "widths": "qarange | (5, 200, 5)",
+          "drive_power": null,
+          "drive_freq": null
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            8
+          ],
+          "quality_bounds": [
+            0.98,
+            0.95,
+            0.91
+          ]
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        -98.3145230978196,
+        -352.9789336521695
+      ],
+      "port_pos": [
+        "left",
+        "right"
+      ]
+    },
+    "ReadoutFreqCalibrate_0x2298db30400": {
+      "exp_name": "ReadoutFreqCalibrate",
+      "exp_params": {
+        "experiment_options": {
+          "fc_list": "normal | None",
+          "readout_power": null
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            12
+          ],
+          "distance_flag": false,
+          "intersection_flag": false,
+          "diff_threshold": 0.1
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        320.48850948457465,
+        -434.1192311368638
+      ],
+      "port_pos": [
+        "left",
+        "right"
+      ]
+    },
+    "ReadoutPowerCalibrate_0x22989996b40": {
+      "exp_name": "ReadoutPowerCalibrate",
+      "exp_params": {
+        "experiment_options": {
+          "optimize_field": "probe_power",
+          "sweep_list": "qarange | (-35, -15, 1)"
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            8
+          ],
+          "distance_flag": false
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        644.4489110137814,
+        -234.02231225982686
+      ],
+      "port_pos": [
+        "left",
+        "right"
+      ]
+    },
+    "SampleWidthOptimize_0x2298c735cc0": {
+      "exp_name": "SampleWidthOptimize",
+      "exp_params": {
+        "experiment_options": {
+          "optimize_field": "sample_width",
+          "sweep_list": "qarange | (600, 2200, 100)"
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            8
+          ],
+          "distance_flag": false
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        318.65189700403255,
+        -108.82469696208116
+      ],
+      "port_pos": [
+        "left",
+        "right"
+      ]
+    },
+    "ReadoutFreqCalibrate_0x2298d0d32c0": {
+      "exp_name": "ReadoutFreqCalibrate",
+      "exp_params": {
+        "experiment_options": {
+          "fc_list": "normal | None",
+          "readout_power": null
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            12
+          ],
+          "distance_flag": false,
+          "intersection_flag": false,
+          "diff_threshold": 0.1
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        896.431388826906,
+        -168.62273638485425
+      ],
+      "port_pos": [
+        "left",
+        "right"
+      ]
+    },
+    "SingleShot_0x2298e794600": {
+      "exp_name": "SingleShot",
+      "exp_params": {
+        "experiment_options": {
+          "is_check": false,
+          "save_bin": false
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            7,
+            6
+          ],
+          "quality_bounds": [
+            2,
+            0.85,
+            0.7,
+            0.011
+          ],
+          "n_clusters": 2,
+          "method": "GMM",
+          "n_multiple": 3.0
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        1067.0966019704988,
+        -227.0714166870529
+      ],
+      "port_pos": [
+        "left",
+        "right"
+      ]
+    },
+    "QubitFreqCalibration_0x22988baa180": {
+      "exp_name": "QubitFreqCalibration",
+      "exp_params": {
+        "experiment_options": {
+          "fringes": "qarange | (10, -10, -20)",
+          "delays": "qarange | (100, 800, 10)"
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            8
+          ],
+          "freq_gap_threshold": 0.1
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        904.2154357235054,
+        264.1756581286661
+      ],
+      "port_pos": [
+        "right",
+        "left"
+      ]
+    },
+    "RabiScanAmp_0x2298d15b4c0": {
+      "exp_name": "RabiScanAmp",
+      "exp_params": {
+        "experiment_options": {
+          "name": "Xpi",
+          "amps": "qarange | (0.0, 1.0, 0.02)",
+          "drive_power": null
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            8
+          ],
+          "quality_bounds": [
+            0.98,
+            0.95,
+            0.91
+          ]
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        648.4072841716883,
+        86.76220307914714
+      ],
+      "port_pos": [
+        "right",
+        "left"
+      ]
+    },
+    "DetuneCalibration_0x2298cf4b700": {
+      "exp_name": "DetuneCalibration",
+      "exp_params": {
+        "experiment_options": {
+          "detune_list": "qarange | (-0.025, 0.01, 0.001)",
+          "rough_n_list": "qarange | (6, 8, 1)",
+          "fine_n_list": "qarange | (7, 9, 2)",
+          "theta_type": "Xpi",
+          "fine_precision": 0.0005
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            8
+          ],
+          "diff_threshold": 0.2
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        426.73530316525427,
+        251.0295245976024
+      ],
+      "port_pos": [
+        "right",
+        "left"
+      ]
+    },
+    "SingleShot_0x2298f5ee800": {
+      "exp_name": "SingleShot",
+      "exp_params": {
+        "experiment_options": {
+          "is_check": false,
+          "save_bin": false
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            7,
+            6
+          ],
+          "quality_bounds": [
+            2,
+            0.85,
+            0.7,
+            0.011
+          ],
+          "n_clusters": 2,
+          "method": "GMM",
+          "n_multiple": 3.0
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        -213.62349071578927,
+        116.2669621825711
+      ],
+      "port_pos": [
+        "right",
+        "left"
+      ]
+    },
+    "AmpOptimize_0x2298db30c00": {
+      "exp_name": "AmpOptimize",
+      "exp_params": {
+        "experiment_options": {
+          "theta_type": "Xpi/2",
+          "amp_init": null,
+          "amp_list": "normal | None",
+          "points": 61,
+          "N": 7,
+          "threshold_left": 0.9,
+          "threshold_right": 1.1
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            8
+          ],
+          "quality_bounds": [
+            0.98,
+            0.95,
+            0.85
+          ]
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        -28.95356713120099,
+        199.98824976050102
+      ],
+      "port_pos": [
+        "right",
+        "left"
+      ]
+    },
+    "T1_0x2299025da40": {
+      "exp_name": "T1",
+      "exp_params": {
+        "experiment_options": {
+          "delay_list": "qarange | (200, 29900, 300)",
+          "z_amp": null
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            8
+          ],
+          "quality_bounds": [
+            0.9,
+            0.85,
+            0.77
+          ]
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        -475.9163906312795,
+        -14.171262877813476
+      ],
+      "port_pos": [
+        "right",
+        "left"
+      ]
+    },
+    "T2Ramsey_0x2299052c800": {
+      "exp_name": "T2Ramsey",
+      "exp_params": {
+        "experiment_options": {
+          "delays": "qarange | (200, 20000, 200)",
+          "fringe": 0.5,
+          "zamp": null,
+          "rate_down": 0.3,
+          "rate_up": 0.5,
+          "max_loops": 5
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            8
+          ],
+          "quality_bounds": [
+            0.98,
+            0.93,
+            0.81
+          ],
+          "factor": 3.5
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        -622.0039282113252,
+        143.42608804736813
+      ],
+      "port_pos": [
+        "right",
+        "left"
+      ]
+    },
+    "RBSingle_0x2299025d940": {
+      "exp_name": "RBSingle",
+      "exp_params": {
+        "experiment_options": {
+          "times": 30,
+          "depths": "qarange | (2, 40, 2)",
+          "interleaved_gate": null,
+          "gate_split": false
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            8
+          ],
+          "quality_bounds": [
+            0.9,
+            0.85,
+            0.77
+          ]
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        -500.7014042874828,
+        330.1642309862932
+      ],
+      "port_pos": [
+        "right",
+        "left"
+      ]
+    },
+    "AmpOptimize_0x1c911c8e340": {
+      "exp_name": "AmpOptimize",
+      "exp_params": {
+        "experiment_options": {
+          "theta_type": "Xpi",
+          "amp_init": null,
+          "amp_list": null,
+          "points": 61,
+          "N": 7,
+          "threshold_left": 0.9,
+          "threshold_right": 1.1
+        },
+        "analysis_options": {
+          "is_plot": true,
+          "figsize": [
+            12,
+            8
+          ],
+          "quality_bounds": [
+            0.98,
+            0.95,
+            0.85
+          ]
+        },
+        "sub_analysis_options": {}
+      },
+      "adjust_params": {},
+      "location": [
+        181.3927203852563,
+        82.30156815956249
+      ],
+      "port_pos": [
+        "right",
+        "left"
+      ]
+    }
+  },
+  "execute_params" : {
+        "is_traceback" : false,
+        "is_report" : false,
+        "start_node" : null,
+        "search_type" : "weight_search"
+    }
+}]

@@ -1,0 +1,32 @@
+
+table tr:nth-child(2n), thead {
+    background-color: #f8f8f8;
+}
+
+table tbody tr:nth-child(2n + 1) {
+    background-color: #ffffff;
+}
+
+table tr th {
+    border-color: #dfe2e5;
+}
+table.md-table td {
+    min-width: 32px;
+}
+table tr {
+    border-top-color: #dfe2e5;
+}
+table tr td {
+    border-color: #dfe2e5;
+}
+
+h2 a{
+    color: black;
+}
+
+p strong{
+    color: #135ce0;
+}
+strong{
+    color:red
+}

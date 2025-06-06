@@ -1,0 +1,16 @@
+{
+  "FirstBackGround": "#3c3f41",
+  "SecondBackGround": "#2b2b2b",
+  "ThemeColor": "#00ff00",
+  "SelectBackGround": "#4b6eaf",
+  "SelectFontColor": "#ffffff",
+  "HoverBackGround": "#4b6eaf",
+  "HoverFontColor": "#ffffff",
+  "HintBackGround": "#4b4d4d",
+  "FirstFontSize": "13px",
+  "SecondFontSize": "18px",
+  "FirstFontColor": "#ffffff",
+  "SecondFontColor": "#ffffff",
+  "TreeLineColor": "#5e5c50",
+  "LayoutLine": "#515151"
+}

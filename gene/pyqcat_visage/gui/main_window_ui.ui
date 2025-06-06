@@ -1,0 +1,2671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1358</width>
+    <height>826</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>pyQCat: Quantum Chip Calibration</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="_imgs/_imgs.qrc">
+    <normaloff>:/logo.png</normaloff>:/logo.png</iconset>
+  </property>
+  <property name="toolTip">
+   <string/>
+  </property>
+  <property name="statusTip">
+   <string>pyQCat: Quantum Chip Calibration</string>
+  </property>
+  <property name="whatsThis">
+   <string>pyQCat: Quantum Chip Calibration</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextUnderIcon</enum>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>true</bool>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::AllowNestedDocks|QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks|QMainWindow::GroupedDragging</set>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>24</width>
+        <height>24</height>
+       </size>
+      </property>
+      <property name="usesScrollButtons">
+       <bool>true</bool>
+      </property>
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="movable">
+       <bool>false</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>true</bool>
+      </property>
+      <widget class="DAGWidget" name="mainDAGTab">
+       <attribute name="icon">
+        <iconset resource="_imgs/_imgs.qrc">
+         <normaloff>:/DAG.png</normaloff>:/DAG.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>DAG Live</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+       </layout>
+      </widget>
+      <widget class="QPlotWidget" name="tabPlot">
+       <attribute name="icon">
+        <iconset resource="_imgs/_imgs.qrc">
+         <normaloff>:/live-fill.png</normaloff>:/live-fill.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Real-time Plot</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>Show the experiment result real time</string>
+       </attribute>
+       <attribute name="whatsThis">
+        <string>Show the experiment result real time</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="9,2">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QChartViewY0" name="chart_view_y0"/>
+          </item>
+          <item>
+           <widget class="QChartViewY1" name="chart_view_y1"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_10" stretch="1,1,1">
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="Progress" name="first_pregress" native="true">
+            <layout class="QHBoxLayout" name="horizontalLayout_3"/>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="TopologyWidget" name="tabTopology">
+       <attribute name="icon">
+        <iconset resource="_imgs/_imgs.qrc">
+         <normaloff>:/cpu.png</normaloff>:/cpu.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Chip Topology</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1358</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="baseSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <widget class="QMenu" name="menuDevice">
+    <property name="toolTip">
+     <string>Design Menu</string>
+    </property>
+    <property name="statusTip">
+     <string>Design Menu</string>
+    </property>
+    <property name="whatsThis">
+     <string>Design Menu</string>
+    </property>
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Quantum Device</string>
+    </property>
+    <property name="separatorsCollapsible">
+     <bool>true</bool>
+    </property>
+    <property name="toolTipsVisible">
+     <bool>true</bool>
+    </property>
+    <widget class="QMenu" name="menuQPU">
+     <property name="title">
+      <string>QPU</string>
+     </property>
+     <addaction name="actionHeatMap"/>
+     <addaction name="actionWorkSpaceManage"/>
+     <addaction name="actionStormManage"/>
+     <addaction name="actionTaskManage"/>
+    </widget>
+    <widget class="QMenu" name="menuthread">
+     <property name="title">
+      <string>thread</string>
+     </property>
+     <property name="icon">
+      <iconset resource="_imgs/_imgs.qrc">
+       <normaloff>:/init_config.png</normaloff>:/init_config.png</iconset>
+     </property>
+     <addaction name="actionChipManage"/>
+     <addaction name="actionThreadView"/>
+     <addaction name="actionDiffThreadView"/>
+    </widget>
+    <addaction name="separator"/>
+    <addaction name="actionSystem"/>
+    <addaction name="menuQPU"/>
+    <addaction name="actionContext"/>
+    <addaction name="actionComponent"/>
+    <addaction name="actionFiles"/>
+    <addaction name="menuthread"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionCloseWindow"/>
+    <addaction name="actionRestartExecutor"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>Window</string>
+    </property>
+    <widget class="QMenu" name="menuStylesheet">
+     <property name="title">
+      <string>Color theme</string>
+     </property>
+     <property name="icon">
+      <iconset resource="_imgs/_imgs.qrc">
+       <normaloff>:/system-theme.png</normaloff>:/system-theme.png</iconset>
+     </property>
+     <addaction name="actionStyleDark"/>
+     <addaction name="actionStyleLight"/>
+     <addaction name="separator"/>
+     <addaction name="actionVisageDark"/>
+     <addaction name="actionVisageLight"/>
+     <addaction name="separator"/>
+     <addaction name="actionStyleDefault"/>
+     <addaction name="actionStyleOpen"/>
+    </widget>
+    <widget class="QMenu" name="menuReal_Plot_Theme">
+     <property name="title">
+      <string>Real Plot Theme</string>
+     </property>
+     <property name="icon">
+      <iconset resource="_imgs/_imgs.qrc">
+       <normaloff>:/plot-theme.png</normaloff>:/plot-theme.png</iconset>
+     </property>
+     <addaction name="actionLight"/>
+     <addaction name="actionBlue_Cerulean"/>
+     <addaction name="actionDark"/>
+     <addaction name="actionBrown_Sand"/>
+     <addaction name="actionBlue_NVS"/>
+     <addaction name="actionHigh_Contrast"/>
+     <addaction name="actionBlue_Icy"/>
+     <addaction name="actionQt"/>
+    </widget>
+    <addaction name="actionLibrary"/>
+    <addaction name="actionLog"/>
+    <addaction name="actionqaio_log"/>
+    <addaction name="actionExperimentOptions"/>
+    <addaction name="actionAnalysisOptions"/>
+    <addaction name="actionContet_Side"/>
+    <addaction name="separator"/>
+    <addaction name="actionFullScreen"/>
+    <addaction name="actionScreenshot"/>
+    <addaction name="actionCollapse"/>
+    <addaction name="separator"/>
+    <addaction name="actionSaveWindowState"/>
+    <addaction name="menuStylesheet"/>
+    <addaction name="menuReal_Plot_Theme"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="toolTip">
+     <string>Open Metal Help</string>
+    </property>
+    <property name="statusTip">
+     <string>Open Metal Help</string>
+    </property>
+    <property name="whatsThis">
+     <string>Open Metal Help</string>
+    </property>
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normalon>:/help</normalon>
+     </iconset>
+    </property>
+    <property name="toolTipsVisible">
+     <bool>true</bool>
+    </property>
+    <addaction name="actionExpDoc"/>
+    <addaction name="separator"/>
+    <addaction name="actionUserGide"/>
+    <addaction name="actionCommunity"/>
+   </widget>
+   <widget class="QMenu" name="menuPlot">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionSchedule"/>
+    <addaction name="actionResult"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="actionRunSetting"/>
+    <addaction name="actionreport"/>
+    <addaction name="actionImportDAG"/>
+    <addaction name="actionImportEXP"/>
+    <addaction name="actionSynchronize"/>
+    <addaction name="actionFullOptions"/>
+   </widget>
+   <widget class="QMenu" name="menuUser">
+    <property name="title">
+     <string>User</string>
+    </property>
+    <addaction name="actionLogout"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionManager"/>
+    <addaction name="actionWorkSpace"/>
+    <addaction name="actionWorkSpace_Note"/>
+   </widget>
+   <addaction name="menuDevice"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuPlot"/>
+   <addaction name="menuView"/>
+   <addaction name="menuUser"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="dockLibrary">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>227</width>
+     <height>205</height>
+    </size>
+   </property>
+   <property name="windowIcon">
+    <iconset>
+     <normalon>:/tag-one.png</normalon>
+    </iconset>
+   </property>
+   <property name="toolTip">
+    <string>Library of all the experiments</string>
+   </property>
+   <property name="statusTip">
+    <string>Library of all the experiments</string>
+   </property>
+   <property name="whatsThis">
+    <string>Library of all the experiments</string>
+   </property>
+   <property name="accessibleName">
+    <string/>
+   </property>
+   <property name="accessibleDescription">
+    <string>Library Dock</string>
+   </property>
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <property name="windowTitle">
+    <string>Library</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>4</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetNoConstraint</enum>
+       </property>
+       <property name="topMargin">
+        <number>2</number>
+       </property>
+       <property name="bottomMargin">
+        <number>2</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item row="0" column="1">
+        <widget class="QToolButton" name="deleteExpButton">
+         <property name="toolTip">
+          <string>Focus on component in drawing window</string>
+         </property>
+         <property name="statusTip">
+          <string>Focus on component in drawing window</string>
+         </property>
+         <property name="text">
+          <string>Focus on component in drawing window</string>
+         </property>
+         <property name="icon">
+          <iconset resource="_imgs/_imgs.qrc">
+           <normaloff>:/delete.png</normaloff>:/delete.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QToolButton" name="loadExpButton">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="_imgs/_imgs.qrc">
+           <normaloff>:/folder-open-fill.png</normaloff>:/folder-open-fill.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="FilterLineEdit" name="filterExpText">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Filter</string>
+         </property>
+         <property name="clearButtonEnabled">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTabWidget" name="lib_tab_widget">
+       <property name="tabPosition">
+        <enum>QTabWidget::West</enum>
+       </property>
+       <property name="tabShape">
+        <enum>QTabWidget::Triangular</enum>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="tab_exp">
+        <attribute name="title">
+         <string>Experiments</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="EXPLibraryTreeView" name="experimentLibrary">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="sizeAdjustPolicy">
+            <enum>QAbstractScrollArea::AdjustIgnored</enum>
+           </property>
+           <property name="autoScroll">
+            <bool>true</bool>
+           </property>
+           <property name="dragDropMode">
+            <enum>QAbstractItemView::DragDrop</enum>
+           </property>
+           <property name="defaultDropAction">
+            <enum>Qt::ActionMask</enum>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="dag_tab">
+        <attribute name="title">
+         <string>Dags</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="DAGLibraryTreeView" name="dagLibrary"/>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockEditOptions">
+   <property name="minimumSize">
+    <size>
+     <width>382</width>
+     <height>125</height>
+    </size>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::DefaultContextMenu</enum>
+   </property>
+   <property name="windowIcon">
+    <iconset>
+     <normaloff>:/geometric-flowers.png</normaloff>:/geometric-flowers.png</iconset>
+   </property>
+   <property name="toolTip">
+    <string>Options of experiment configs</string>
+   </property>
+   <property name="statusTip">
+    <string>Options of experiment configs</string>
+   </property>
+   <property name="whatsThis">
+    <string>Options of experiment configs</string>
+   </property>
+   <property name="windowTitle">
+    <string>Options Editor</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockOptionsContents">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="toolBarDesign">
+   <property name="windowTitle">
+    <string>Design toolbar</string>
+   </property>
+   <property name="statusTip">
+    <string>Design toolbar</string>
+   </property>
+   <property name="whatsThis">
+    <string>Design toolbar</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionRunExperiment"/>
+   <addaction name="actionRunDAG"/>
+   <addaction name="actionStop"/>
+   <addaction name="actionSaveEXP"/>
+   <addaction name="actionSaveDAG"/>
+   <addaction name="actionFullScreen"/>
+   <addaction name="actionScreenshot"/>
+   <addaction name="actionCollapse"/>
+  </widget>
+  <widget class="QDockWidget" name="dockContext">
+   <property name="minimumSize">
+    <size>
+     <width>382</width>
+     <height>125</height>
+    </size>
+   </property>
+   <property name="windowIcon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/build.png</normaloff>:/build.png</iconset>
+   </property>
+   <property name="toolTip">
+    <string>Context settings</string>
+   </property>
+   <property name="statusTip">
+    <string>Context settings</string>
+   </property>
+   <property name="whatsThis">
+    <string>Context settings</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockContextContents">
+    <layout class="QVBoxLayout" name="verticalLayout_4"/>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockLog">
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="windowIcon">
+    <iconset>
+     <normalon>:/log</normalon>
+    </iconset>
+   </property>
+   <property name="toolTip">
+    <string>Log window</string>
+   </property>
+   <property name="statusTip">
+    <string>Log window</string>
+   </property>
+   <property name="whatsThis">
+    <string>Log window</string>
+   </property>
+   <property name="windowTitle">
+    <string>Log</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_4">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QSplitter" name="splitter">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <widget class="QTextEditLogger" name="log_text">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="documentTitle">
+         <string>Log</string>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::TextBrowserInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+        </property>
+       </widget>
+       <widget class="QTextEditLogger" name="log_qstream">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="documentTitle">
+         <string>qaio_log</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionSaveEXP">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/save</normaloff>:/save</iconset>
+   </property>
+   <property name="text">
+    <string>Save EXP</string>
+   </property>
+   <property name="toolTip">
+    <string>Save Exp to DB</string>
+   </property>
+   <property name="statusTip">
+    <string>Save design to file</string>
+   </property>
+   <property name="whatsThis">
+    <string>Save design to file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionLibrary">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/library-label.png</normaloff>:/library-label.png</iconset>
+   </property>
+   <property name="text">
+    <string>Library</string>
+   </property>
+   <property name="toolTip">
+    <string>Show experiment library -- select  experiment</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionLog">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/log</normaloff>:/log</iconset>
+   </property>
+   <property name="text">
+    <string>Log</string>
+   </property>
+   <property name="toolTip">
+    <string>Show/hide log window</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionExperimentOptions">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/experiment-options.png</normaloff>:/experiment-options.png</iconset>
+   </property>
+   <property name="text">
+    <string>Experiment Options</string>
+   </property>
+   <property name="toolTip">
+    <string>Open window to edit experiment options</string>
+   </property>
+   <property name="statusTip">
+    <string>Open window to edit experiment options</string>
+   </property>
+   <property name="whatsThis">
+    <string>Open window to edit experiment options</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionStyleOpen">
+   <property name="text">
+    <string>Open File</string>
+   </property>
+  </action>
+  <action name="actionStyleDefault">
+   <property name="text">
+    <string>System default</string>
+   </property>
+  </action>
+  <action name="actionStyleDark">
+   <property name="text">
+    <string>Classic Dark</string>
+   </property>
+  </action>
+  <action name="actionScreenshot">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/screenshot</normaloff>:/screenshot</iconset>
+   </property>
+   <property name="text">
+    <string>SnapShot</string>
+   </property>
+   <property name="toolTip">
+    <string>Take a screenshot of the window</string>
+   </property>
+  </action>
+  <action name="actionFullScreen">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/full-screen.png</normaloff>:/full-screen.png</iconset>
+   </property>
+   <property name="text">
+    <string>Full Screen</string>
+   </property>
+   <property name="toolTip">
+    <string>Go to full screen</string>
+   </property>
+  </action>
+  <action name="actionVisageDark">
+   <property name="text">
+    <string>Visage Dark</string>
+   </property>
+   <property name="iconText">
+    <string>Visage Dark</string>
+   </property>
+   <property name="toolTip">
+    <string>Visage Dark</string>
+   </property>
+  </action>
+  <action name="actionSaveWindowState">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/save</normaloff>:/save</iconset>
+   </property>
+   <property name="text">
+    <string>Save window state</string>
+   </property>
+  </action>
+  <action name="actionCloseWindow">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/close.png</normaloff>:/close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close window</string>
+   </property>
+  </action>
+  <action name="actionComponent">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/qubit.png</normaloff>:/qubit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Component</string>
+   </property>
+   <property name="toolTip">
+    <string>Get quantum component info</string>
+   </property>
+  </action>
+  <action name="actionAnalysisOptions">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/analysis-options.png</normaloff>:/analysis-options.png</iconset>
+   </property>
+   <property name="text">
+    <string>Analysis Options</string>
+   </property>
+   <property name="toolTip">
+    <string>Open window to edit experiment analysis options</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionSystem">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/setting.png</normaloff>:/setting.png</iconset>
+   </property>
+   <property name="text">
+    <string>System</string>
+   </property>
+   <property name="toolTip">
+    <string>Get/Edit system info</string>
+   </property>
+  </action>
+  <action name="actionCommunity">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/about.png</normaloff>:/about.png</iconset>
+   </property>
+   <property name="text">
+    <string>PyQCat Community</string>
+   </property>
+   <property name="statusTip">
+    <string>PyQCat Community: contains all the PyQCat material descriptions.</string>
+   </property>
+  </action>
+  <action name="actionRunExperiment">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/run.png</normaloff>:/run.png</iconset>
+   </property>
+   <property name="text">
+    <string>Run EXP</string>
+   </property>
+   <property name="toolTip">
+    <string>Execute experiment</string>
+   </property>
+  </action>
+  <action name="actionSchedule">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/live-fill.png</normaloff>:/live-fill.png</iconset>
+   </property>
+   <property name="text">
+    <string>Schedule</string>
+   </property>
+  </action>
+  <action name="actionResult">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/report.png</normaloff>:/report.png</iconset>
+   </property>
+   <property name="text">
+    <string>Result</string>
+   </property>
+  </action>
+  <action name="actionBacktracing">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>backtracing</string>
+   </property>
+   <property name="toolTip">
+    <string>enable or disable DAG backtracing fucntion</string>
+   </property>
+  </action>
+  <action name="actionGenerateReports">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>generate reports</string>
+   </property>
+   <property name="toolTip">
+    <string>Enable or disable test reports after running DAG </string>
+   </property>
+  </action>
+  <action name="actionSynchronize">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/sync.png</normaloff>:/sync.png</iconset>
+   </property>
+   <property name="text">
+    <string>Synchronize</string>
+   </property>
+   <property name="toolTip">
+    <string>Synchronize DAG experiment and library experiment</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+S</string>
+   </property>
+  </action>
+  <action name="actionHeatMap">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/cpu.png</normaloff>:/cpu.png</iconset>
+   </property>
+   <property name="text">
+    <string>HeatMap</string>
+   </property>
+  </action>
+  <action name="actionLogout">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/logout.png</normaloff>:/logout.png</iconset>
+   </property>
+   <property name="text">
+    <string>Logout</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/copy.png</normaloff>:/copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy</string>
+   </property>
+  </action>
+  <action name="actionmanager">
+   <property name="text">
+    <string>Manager</string>
+   </property>
+  </action>
+  <action name="actionManager">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/user-manage.png</normaloff>:/user-manage.png</iconset>
+   </property>
+   <property name="text">
+    <string>Manager</string>
+   </property>
+  </action>
+  <action name="actionBase_Options">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>base options</string>
+   </property>
+  </action>
+  <action name="actionFullOptions">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/reset.png</normaloff>:/reset.png</iconset>
+   </property>
+   <property name="text">
+    <string>Full Options</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+F</string>
+   </property>
+  </action>
+  <action name="actionCollapse">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/collapse.png</normaloff>:/collapse.png</iconset>
+   </property>
+   <property name="text">
+    <string>Collapse All</string>
+   </property>
+   <property name="toolTip">
+    <string>Collapse all docks</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+C</string>
+   </property>
+  </action>
+  <action name="actionContext">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/context-edit.png</normaloff>:/context-edit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Context</string>
+   </property>
+  </action>
+  <action name="actionRunDAG">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/run-dag.png</normaloff>:/run-dag.png</iconset>
+   </property>
+   <property name="text">
+    <string>Run DAG</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/wifi-off-fill.png</normaloff>:/wifi-off-fill.png</iconset>
+   </property>
+   <property name="text">
+    <string>Stop</string>
+   </property>
+  </action>
+  <action name="actionVisageLight">
+   <property name="text">
+    <string>Visage Light</string>
+   </property>
+  </action>
+  <action name="actionsimulator">
+   <property name="text">
+    <string>Simulator</string>
+   </property>
+  </action>
+  <action name="actionSaveDAG">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/save_as.png</normaloff>:/save_as.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save DAG</string>
+   </property>
+   <property name="toolTip">
+    <string>Save DAG</string>
+   </property>
+  </action>
+  <action name="actionreport">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/report.png</normaloff>:/report.png</iconset>
+   </property>
+   <property name="text">
+    <string>Report</string>
+   </property>
+  </action>
+  <action name="actionLight">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Light</string>
+   </property>
+  </action>
+  <action name="actionBlue_Cerulean">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Blue Cerulean</string>
+   </property>
+  </action>
+  <action name="actionDark">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Dark</string>
+   </property>
+  </action>
+  <action name="actionBrown_Sand">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Brown Sand</string>
+   </property>
+  </action>
+  <action name="actionBlue_NVS">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Blue NVS</string>
+   </property>
+  </action>
+  <action name="actionHigh_Contrast">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>High Contrast</string>
+   </property>
+  </action>
+  <action name="actionBlue_Icy">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Blue Icy</string>
+   </property>
+  </action>
+  <action name="actionQt">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Qt</string>
+   </property>
+  </action>
+  <action name="actionImportDAG">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/local.png</normaloff>:/local.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import DAG</string>
+   </property>
+  </action>
+  <action name="actionImportEXP">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/folder-open-fill.png</normaloff>:/folder-open-fill.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import EXP</string>
+   </property>
+  </action>
+  <action name="actionRunSetting">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/run.png</normaloff>:/run.png</iconset>
+   </property>
+   <property name="text">
+    <string>Run</string>
+   </property>
+  </action>
+  <action name="actionFiles">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/folder-open-fill.png</normaloff>:/folder-open-fill.png</iconset>
+   </property>
+   <property name="text">
+    <string>Files</string>
+   </property>
+  </action>
+  <action name="actionStyleLight">
+   <property name="text">
+    <string>Classic Light</string>
+   </property>
+  </action>
+  <action name="actionExpDoc">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/file-code.png</normaloff>:/file-code.png</iconset>
+   </property>
+   <property name="text">
+    <string>Experiment Document</string>
+   </property>
+  </action>
+  <action name="actionUserGide">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/txt.png</normaloff>:/txt.png</iconset>
+   </property>
+   <property name="text">
+    <string>User Manual</string>
+   </property>
+  </action>
+  <action name="actionqaio_log">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/log.png</normaloff>:/log.png</iconset>
+   </property>
+   <property name="text">
+    <string>qaio log</string>
+   </property>
+  </action>
+  <action name="actionContet_Side">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/context-edit.png</normaloff>:/context-edit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Context Side</string>
+   </property>
+  </action>
+  <action name="actionChipManage">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/chimera-manage.png</normaloff>:/chimera-manage.png</iconset>
+   </property>
+   <property name="text">
+    <string>ChimeraManage</string>
+   </property>
+  </action>
+  <action name="actionWorkSpace">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/workspace-self.png</normaloff>:/workspace-self.png</iconset>
+   </property>
+   <property name="text">
+    <string>WorkSpace</string>
+   </property>
+  </action>
+  <action name="actionWorkSpace_Note">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/workspace-note.png</normaloff>:/workspace-note.png</iconset>
+   </property>
+   <property name="text">
+    <string>WorkSpace Note</string>
+   </property>
+  </action>
+  <action name="actionWorkSpaceManage">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/workspace-manage.png</normaloff>:/workspace-manage.png</iconset>
+   </property>
+   <property name="text">
+    <string>WorkSpaceManage</string>
+   </property>
+  </action>
+  <action name="actionThreadView">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/coupler.png</normaloff>:/coupler.png</iconset>
+   </property>
+   <property name="text">
+    <string>ThreadView</string>
+   </property>
+  </action>
+  <action name="actionRestartExecutor">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/loading.png</normaloff>:/loading.png</iconset>
+   </property>
+   <property name="text">
+    <string>restart executor</string>
+   </property>
+  </action>
+  <action name="actionStormManage">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/manage2.png</normaloff>:/manage2.png</iconset>
+   </property>
+   <property name="text">
+    <string>StormManage</string>
+   </property>
+  </action>
+  <action name="actionDiffThreadView">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/setting.png</normaloff>:/setting.png</iconset>
+   </property>
+   <property name="text">
+    <string>DiffThreadView</string>
+   </property>
+  </action>
+  <action name="actionTaskManage">
+   <property name="icon">
+    <iconset resource="_imgs/_imgs.qrc">
+     <normaloff>:/task-manage.png</normaloff>:/task-manage.png</iconset>
+   </property>
+   <property name="text">
+    <string>TaskManage</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QTextEditLogger</class>
+   <extends>QTextEdit</extends>
+   <header>.widgets.log.log_visage</header>
+  </customwidget>
+  <customwidget>
+   <class>QChartViewY1</class>
+   <extends>QGraphicsView</extends>
+   <header>.widgets.dynamic.chart_view</header>
+  </customwidget>
+  <customwidget>
+   <class>QChartViewY0</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">.widgets.dynamic.chart_view</header>
+  </customwidget>
+  <customwidget>
+   <class>QPlotWidget</class>
+   <extends>QWidget</extends>
+   <header>.widgets.dynamic.plot_widget</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Progress</class>
+   <extends>QWidget</extends>
+   <header>.widgets.dynamic.progress</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DAGLibraryTreeView</class>
+   <extends>QTreeView</extends>
+   <header>.widgets.library.dag_tree_view </header>
+  </customwidget>
+  <customwidget>
+   <class>EXPLibraryTreeView</class>
+   <extends>QTreeView</extends>
+   <header>.widgets.library.exp_tree_view</header>
+  </customwidget>
+  <customwidget>
+   <class>DAGWidget</class>
+   <extends>QWidget</extends>
+   <header>.graphics.dag_widget</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FilterLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>.widgets.library.filter_line_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>TopologyWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">.widgets.topolopy.topology_widget</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="_imgs/_imgs.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionSaveEXP</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>save_exp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>583</x>
+     <y>395</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStyleDark</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_stylesheet_dark()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>588</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStyleDefault</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_stylesheet_default()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>588</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionScreenshot</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>_screenshot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>588</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStyleOpen</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_stylesheet_open()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>588</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFullScreen</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showFullScreen()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>588</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionVisageDark</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_stylesheet_cat_dark()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>441</x>
+     <y>429</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dockLibrary</sender>
+   <signal>visibilityChanged(bool)</signal>
+   <receiver>actionLibrary</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>154</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLibrary</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>dockLibrary</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>154</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLibrary</sender>
+   <signal>triggered()</signal>
+   <receiver>dockLibrary</receiver>
+   <slot>raise()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>154</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCloseWindow</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>536</x>
+     <y>387</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSaveWindowState</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>save_window_settings()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>536</x>
+     <y>387</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExperimentOptions</sender>
+   <signal>triggered()</signal>
+   <receiver>dockEditOptions</receiver>
+   <slot>raise()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1357</x>
+     <y>342</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExperimentOptions</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>dockEditOptions</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1357</x>
+     <y>342</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dockEditOptions</sender>
+   <signal>visibilityChanged(bool)</signal>
+   <receiver>actionExperimentOptions</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1357</x>
+     <y>342</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionHeatMap</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_heatmap()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>loadExpButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_experiment_file()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>81</x>
+     <y>94</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>87</x>
+     <y>824</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>deleteExpButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>delete_custom_exp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>123</x>
+     <y>-18</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSystem</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_system_ui()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionComponent</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_component_edit_ui()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRunExperiment</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>run_experiment()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFullOptions</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>is_full_options()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>392</x>
+     <y>-13</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCollapse</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>collapse_all_docks()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionManager</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_user_ui()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionContext</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_context_ui()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLogout</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>login_out()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRunDAG</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>run_dag()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStop</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>stop_execute()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>menubar</sender>
+   <signal>triggered(QAction*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_stylesheet_light()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>8</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>-33</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionVisageLight</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_stylesheet_cat_light()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionsimulator</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_simulator_ui()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionreport</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_report_ui()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSaveDAG</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>save_dag()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLight</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chart_light_theme()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBlue_Cerulean</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chart_bc_theme()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDark</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chart_dark_theme()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBrown_Sand</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chart_bs_theme()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBlue_NVS</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chart_bn_theme()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionHigh_Contrast</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chart_hc_theme()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionQt</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chart_qt_theme()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBlue_Icy</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chart_bi_theme()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionImportDAG</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>import_dag()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionImportEXP</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>import_exp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRunSetting</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_run_setting()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSchedule</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_schedule_tool()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionManager</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>user_manager()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFiles</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_files_widget()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCopy</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStyleLight</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_stylesheet_light()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCommunity</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_community()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExpDoc</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_exp_doc()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionUserGide</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_user_manual()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionqaio_log</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>show_qaio_log()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionContet_Side</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>dockContext</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1166</x>
+     <y>546</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionContet_Side</sender>
+   <signal>triggered()</signal>
+   <receiver>dockContext</receiver>
+   <slot>raise()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1166</x>
+     <y>462</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionChipManage</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_chip_manage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionWorkSpace</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_workspace()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionWorkSpace_Note</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_workspace_note()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLog</sender>
+   <signal>triggered()</signal>
+   <receiver>dockLog</receiver>
+   <slot>raise()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>581</x>
+     <y>747</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dockLog</sender>
+   <signal>visibilityChanged(bool)</signal>
+   <receiver>actionLog</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>581</x>
+     <y>747</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLog</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>dockLog</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>581</x>
+     <y>747</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionWorkSpaceManage</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_workspace_manage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionThreadView</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_thread_view()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>412</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRestartExecutor</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>restart_executor_process()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>412</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStormManage</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_storm_manage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>412</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDiffThreadView</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>show_diff_thread_view()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>412</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTaskManage</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_dag_manage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>412</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>showHelp()</slot>
+  <slot>load_stylesheet_default()</slot>
+  <slot>load_stylesheet_dark()</slot>
+  <slot>load_stylesheet_open()</slot>
+  <slot>_screenshot()</slot>
+  <slot>full_refresh()</slot>
+  <slot>load_stylesheet_cat_dark()</slot>
+  <slot>save_window_settings()</slot>
+  <slot>create_build_log_window()</slot>
+  <slot>load_heatmap()</slot>
+  <slot>load_qubit()</slot>
+  <slot>load_coupler()</slot>
+  <slot>open_experiment_file()</slot>
+  <slot>delete_custom_exp()</slot>
+  <slot>open_system_ui()</slot>
+  <slot>open_component_edit_ui()</slot>
+  <slot>run_experiment()</slot>
+  <slot>is_full_options()</slot>
+  <slot>collapse_all_docks()</slot>
+  <slot>open_user_ui()</slot>
+  <slot>open_context_ui()</slot>
+  <slot>login_out()</slot>
+  <slot>run_dag()</slot>
+  <slot>stop_execute()</slot>
+  <slot>load_stylesheet_light()</slot>
+  <slot>save_dag()</slot>
+  <slot>save_exp()</slot>
+  <slot>open_report_ui()</slot>
+  <slot>chart_bc_theme()</slot>
+  <slot>chart_bi_theme()</slot>
+  <slot>chart_bn_theme()</slot>
+  <slot>chart_bs_theme()</slot>
+  <slot>chart_dark_theme()</slot>
+  <slot>chart_light_theme()</slot>
+  <slot>chart_hc_theme()</slot>
+  <slot>chart_qt_theme()</slot>
+  <slot>import_dag()</slot>
+  <slot>import_exp()</slot>
+  <slot>open_run_setting()</slot>
+  <slot>open_schedule_tool()</slot>
+  <slot>user_manager()</slot>
+  <slot>open_files_widget()</slot>
+  <slot>load_copy()</slot>
+  <slot>load_stylesheet_cat_light()</slot>
+  <slot>vali_parallel_options()</slot>
+  <slot>show_qaio_log()</slot>
+  <slot>open_community()</slot>
+  <slot>open_user_manual()</slot>
+  <slot>open_exp_doc()</slot>
+  <slot>load_chip_manage()</slot>
+  <slot>load_workspace()</slot>
+  <slot>load_workspace_note()</slot>
+  <slot>load_workspace_manage()</slot>
+  <slot>load_thread_view()</slot>
+  <slot>restart_executor_process()</slot>
+  <slot>load_storm_manage()</slot>
+  <slot>show_diff_thread_view()</slot>
+  <slot>load_dag_manage()</slot>
+ </slots>
+</ui>

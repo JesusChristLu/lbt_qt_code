@@ -1,0 +1,1 @@
+`JetBrainsMono-Regular.ttf` was downloaded from [JetBrains Mono: A free and open source typeface for developers | JetBrains: Developer Tools for Professionals and Teams](https://www.jetbrains.com/lp/mono/) on 10/31/2023.

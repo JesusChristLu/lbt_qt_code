@@ -1,0 +1,21 @@
+qubits:
+  C012:
+    d: 0.25
+    eta: -0.2
+    id: 0
+    period: 1.0
+    sws: 0.0
+    w_idle: 10.0
+    w_idle~: 10.000424600039711
+    w_max: 10.0
+  Q2:
+    d: 0.25
+    eta: -0.2
+    id: 1
+    period: 1.0
+    sws: 0.0
+    w_idle: 4.5
+    w_idle~: 4.496743348044165
+    w_max: 4.5
+rho_map:
+  Q2-C012: 0.015
